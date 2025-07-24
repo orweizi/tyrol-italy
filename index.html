@@ -480,6 +480,7 @@
                 position: relative;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                overflow: hidden; /* Prevent any content overflow */
             }
             
             .flight-card:hover {
@@ -488,40 +489,75 @@
             }
             
             .flight-info {
-                display: none; /* Hide detailed info on mobile */
+                display: none !important; /* Completely hide detailed info on mobile */
             }
             
             .flight-card h3 {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+                line-height: 1.2;
+            }
+            
+            /* Ensure no other content shows on mobile */
+            .flight-card .edit-controls {
+                top: 3px;
+                left: 3px;
+            }
+            
+            /* Mobile edit mode styling */
+            .edit-mode .flight-card {
+                border: 2px dashed var(--warning-color) !important;
+                background: rgba(214, 158, 46, 0.1);
+            }
+            
+            .edit-mode .mobile-summary {
+                background: rgba(255, 255, 255, 0.95);
+                border: 1px solid var(--warning-color);
             }
             
             /* Mobile summary info */
             .mobile-summary {
                 display: block;
-                background: var(--gray-50);
-                padding: 8px;
-                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.9);
+                padding: 10px;
+                border-radius: 8px;
                 font-size: 0.75rem;
                 margin-top: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(5px);
             }
             
             .mobile-summary-row {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin: 2px 0;
+                margin: 3px 0;
+                min-height: 16px;
             }
             
             .mobile-summary-label {
-                color: var(--gray-600);
+                color: var(--gray-700);
                 font-size: 0.7rem;
+                font-weight: 500;
+                flex: 0 0 auto;
             }
             
             .mobile-summary-value {
                 font-weight: bold;
                 color: var(--primary-color);
                 font-size: 0.75rem;
+                text-align: left;
+                flex: 1;
+                margin-right: 8px;
+            }
+            
+            /* Mobile tap indicator */
+            .mobile-tap-hint {
+                font-size: 0.65rem;
+                color: var(--gray-500);
+                text-align: center;
+                margin-top: 4px;
+                font-style: italic;
             }
             
             /* Mobile detail modal */
@@ -1610,17 +1646,14 @@
                         <!-- Mobile summary (hidden on desktop) -->
                         <div class="mobile-summary">
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מסלול:</span>
-                                <span class="mobile-summary-value">TLV → VIE</span>
+                                <span class="mobile-summary-label">🛫</span>
+                                <span class="mobile-summary-value">TLV → VIE • 17:30-20:15</span>
                             </div>
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">זמן:</span>
-                                <span class="mobile-summary-value">17:30 → 20:15</span>
+                                <span class="mobile-summary-label">✈️</span>
+                                <span class="mobile-summary-value">LY363 El Al CLASSIC</span>
                             </div>
-                            <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">טיסה:</span>
-                                <span class="mobile-summary-value">LY363 El Al</span>
-                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
 
@@ -1669,17 +1702,14 @@
                         <!-- Mobile summary (hidden on desktop) -->
                         <div class="mobile-summary">
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מסלול:</span>
-                                <span class="mobile-summary-value">VIE → INN</span>
+                                <span class="mobile-summary-label">🛫</span>
+                                <span class="mobile-summary-value">VIE → INN • 06:50-07:45</span>
                             </div>
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">זמן:</span>
-                                <span class="mobile-summary-value">06:50 → 07:45</span>
+                                <span class="mobile-summary-label">✈️</span>
+                                <span class="mobile-summary-value">OS915 Austrian Airlines</span>
                             </div>
-                            <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">טיסה:</span>
-                                <span class="mobile-summary-value">OS915 Austrian</span>
-                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
 
@@ -1726,17 +1756,14 @@
                         <!-- Mobile summary (hidden on desktop) -->
                         <div class="mobile-summary">
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מסלול:</span>
-                                <span class="mobile-summary-value">MXP → TLV</span>
+                                <span class="mobile-summary-label">🛬</span>
+                                <span class="mobile-summary-value">MXP → TLV • 00:30-05:15</span>
                             </div>
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">זמן:</span>
-                                <span class="mobile-summary-value">00:30 → 05:15</span>
+                                <span class="mobile-summary-label">⭐</span>
+                                <span class="mobile-summary-value">El Al BUSINESS CLASS</span>
                             </div>
-                            <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מחלקה:</span>
-                                <span class="mobile-summary-value">BUSINESS (J)</span>
-                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
                 </div>
@@ -1816,17 +1843,14 @@
                         <!-- Mobile summary (hidden on desktop) -->
                         <div class="mobile-summary">
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">רכב:</span>
-                                <span class="mobile-summary-value">Toyota C-HR</span>
+                                <span class="mobile-summary-label">🚗</span>
+                                <span class="mobile-summary-value">Toyota C-HR • 18.8-25.8</span>
                             </div>
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">תאריכים:</span>
-                                <span class="mobile-summary-value">18.8-25.8.2025</span>
+                                <span class="mobile-summary-label">🏢</span>
+                                <span class="mobile-summary-value">Alamo • Innsbruck Airport</span>
                             </div>
-                            <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">חברה:</span>
-                                <span class="mobile-summary-value">Alamo</span>
-                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
 
@@ -1883,17 +1907,14 @@
                         <!-- Mobile summary (hidden on desktop) -->
                         <div class="mobile-summary">
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מקום:</span>
-                                <span class="mobile-summary-value">איטליה</span>
+                                <span class="mobile-summary-label">🚗</span>
+                                <span class="mobile-summary-value">רכב איטליה • 26.8-30.8</span>
                             </div>
                             <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">תאריכים:</span>
-                                <span class="mobile-summary-value">26.8-30.8.2025</span>
+                                <span class="mobile-summary-label">📍</span>
+                                <span class="mobile-summary-value">Novara FS → Malpensa</span>
                             </div>
-                            <div class="mobile-summary-row">
-                                <span class="mobile-summary-label">מ-אל:</span>
-                                <span class="mobile-summary-value">Novara → MXP</span>
-                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
                 </div>
@@ -2599,8 +2620,10 @@
                  updatedCards.forEach(card => {
                      card.style.cursor = 'pointer';
                      card.addEventListener('click', function(e) {
-                         // Don't trigger if clicking edit button
-                         if (e.target.closest('.edit-controls')) return;
+                         // Don't trigger if clicking edit button or any interactive element
+                         if (e.target.closest('.edit-controls') || 
+                             e.target.closest('button') || 
+                             e.target.closest('a')) return;
                          
                          const itemType = card.dataset.itemType;
                          const itemId = card.dataset.itemId;
@@ -2627,50 +2650,58 @@
                  document.body.appendChild(modal);
              }
 
-             // Get card details
+             // Get card details - we need to create a temporary clone to get the full details
              const cardTitle = cardElement.querySelector('h3').textContent;
-             const flightInfo = cardElement.querySelector('.flight-info');
-             const details = Array.from(flightInfo.querySelectorAll('.flight-detail'));
-
-             // Build modal content
-             let modalContent = `
-                 <div class="mobile-detail-content">
-                     <div class="mobile-detail-header">
-                         <div class="mobile-detail-title">${cardTitle}</div>
-                         <button class="mobile-detail-close" onclick="closeMobileDetailModal()">
-                             <i class="fas fa-times"></i>
-                         </button>
-                     </div>
-                     <div class="mobile-detail-info">
-             `;
-
-             details.forEach(detail => {
-                 const icon = detail.querySelector('i');
-                 const label = detail.querySelector('div:not(.icon)');
-                 const value = detail.querySelector('strong') || detail.querySelector('a');
-                 
-                 if (icon && label && value) {
-                     let valueContent = value.innerHTML;
-                     modalContent += `
-                         <div class="mobile-detail-item">
-                             <i class="${icon.className}"></i>
-                             <span class="label">${label.textContent}</span>
-                             <span class="value">${valueContent}</span>
-                         </div>
-                     `;
-                 }
-             });
-
-             modalContent += `
-                     </div>
-                 </div>
-             `;
-
-             modal.innerHTML = modalContent;
-             modal.style.display = 'block';
              
-             // Prevent body scrolling
-             document.body.style.overflow = 'hidden';
+             // Create a temporary element to hold the full flight info for the modal
+             const tempCard = cardElement.cloneNode(true);
+             const tempFlightInfo = tempCard.querySelector('.flight-info');
+             
+             // Temporarily show the flight info to get the details
+             if (tempFlightInfo) {
+                 tempFlightInfo.style.display = 'block';
+                 const details = Array.from(tempFlightInfo.querySelectorAll('.flight-detail'));
+
+                 // Build modal content
+                 let modalContent = `
+                     <div class="mobile-detail-content">
+                         <div class="mobile-detail-header">
+                             <div class="mobile-detail-title">${cardTitle}</div>
+                             <button class="mobile-detail-close" onclick="closeMobileDetailModal()">
+                                 <i class="fas fa-times"></i>
+                             </button>
+                         </div>
+                         <div class="mobile-detail-info">
+                 `;
+
+                 details.forEach(detail => {
+                     const icon = detail.querySelector('i');
+                     const labelDiv = detail.querySelector('div:not([class])');
+                     const value = detail.querySelector('strong') || detail.querySelector('a');
+                     
+                     if (icon && labelDiv && value) {
+                         let valueContent = value.innerHTML;
+                         modalContent += `
+                             <div class="mobile-detail-item">
+                                 <i class="${icon.className}"></i>
+                                 <span class="label">${labelDiv.textContent}</span>
+                                 <span class="value">${valueContent}</span>
+                             </div>
+                         `;
+                     }
+                 });
+
+                 modalContent += `
+                         </div>
+                     </div>
+                 `;
+
+                 modal.innerHTML = modalContent;
+                 modal.style.display = 'block';
+                 
+                 // Prevent body scrolling
+                 document.body.style.overflow = 'hidden';
+             }
          }
 
          // Close mobile detail modal
@@ -2682,11 +2713,21 @@
              }
          }
 
-         // Close modal on background click
+         // Close modal on background click or ESC key
          document.addEventListener('click', function(e) {
              const modal = document.getElementById('mobileDetailModal');
              if (modal && e.target === modal) {
                  closeMobileDetailModal();
+             }
+         });
+
+         // Close modal on ESC key
+         document.addEventListener('keydown', function(e) {
+             if (e.key === 'Escape') {
+                 const modal = document.getElementById('mobileDetailModal');
+                 if (modal && modal.style.display === 'block') {
+                     closeMobileDetailModal();
+                 }
              }
          });
 
