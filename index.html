@@ -475,6 +475,136 @@
                 padding: 15px;
             }
             
+            /* Mobile flight and car cards */
+            .flight-card {
+                position: relative;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .flight-card:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .flight-info {
+                display: none; /* Hide detailed info on mobile */
+            }
+            
+            .flight-card h3 {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            /* Mobile summary info */
+            .mobile-summary {
+                display: block;
+                background: var(--gray-50);
+                padding: 8px;
+                border-radius: 6px;
+                font-size: 0.75rem;
+                margin-top: 8px;
+            }
+            
+            .mobile-summary-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 2px 0;
+            }
+            
+            .mobile-summary-label {
+                color: var(--gray-600);
+                font-size: 0.7rem;
+            }
+            
+            .mobile-summary-value {
+                font-weight: bold;
+                color: var(--primary-color);
+                font-size: 0.75rem;
+            }
+            
+            /* Mobile detail modal */
+            .mobile-detail-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                overflow-y: auto;
+            }
+            
+            .mobile-detail-content {
+                background: white;
+                margin: 20px 10px;
+                border-radius: 10px;
+                padding: 20px;
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+            }
+            
+            .mobile-detail-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid var(--gray-200);
+            }
+            
+            .mobile-detail-title {
+                font-size: 1rem;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+            
+            .mobile-detail-close {
+                background: var(--error-color);
+                color: white;
+                border: none;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-detail-info {
+                display: grid;
+                gap: 8px;
+            }
+            
+            .mobile-detail-item {
+                display: flex;
+                align-items: center;
+                padding: 8px;
+                background: var(--gray-50);
+                border-radius: 6px;
+                font-size: 0.8rem;
+            }
+            
+            .mobile-detail-item i {
+                margin-left: 8px;
+                color: var(--primary-color);
+                width: 16px;
+            }
+            
+            .mobile-detail-item .label {
+                color: var(--gray-600);
+                margin: 0 8px;
+                flex: 1;
+            }
+            
+            .mobile-detail-item .value {
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+            
             .header h1 {
                 font-size: 1.8rem;
                 margin-bottom: 5px;
@@ -1198,6 +1328,11 @@
             position: relative;
         }
 
+        /* Hide mobile summary on desktop */
+        .mobile-summary {
+            display: none;
+        }
+
         .flight-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1472,6 +1607,21 @@
                                 <strong style="color: var(--success-color);">מאושר</strong>
                             </div>
                         </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מסלול:</span>
+                                <span class="mobile-summary-value">TLV → VIE</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">זמן:</span>
+                                <span class="mobile-summary-value">17:30 → 20:15</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">טיסה:</span>
+                                <span class="mobile-summary-value">LY363 El Al</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Connection Flight: Vienna to Innsbruck -->
@@ -1516,6 +1666,21 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מסלול:</span>
+                                <span class="mobile-summary-value">VIE → INN</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">זמן:</span>
+                                <span class="mobile-summary-value">06:50 → 07:45</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">טיסה:</span>
+                                <span class="mobile-summary-value">OS915 Austrian</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Return Flight -->
@@ -1556,6 +1721,21 @@
                                 <i class="fas fa-check-circle"></i>
                                 <div>סטטוס</div>
                                 <strong style="color: var(--success-color);">מאושר</strong>
+                            </div>
+                        </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מסלול:</span>
+                                <span class="mobile-summary-value">MXP → TLV</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">זמן:</span>
+                                <span class="mobile-summary-value">00:30 → 05:15</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מחלקה:</span>
+                                <span class="mobile-summary-value">BUSINESS (J)</span>
                             </div>
                         </div>
                     </div>
@@ -1633,6 +1813,21 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">רכב:</span>
+                                <span class="mobile-summary-value">Toyota C-HR</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">תאריכים:</span>
+                                <span class="mobile-summary-value">18.8-25.8.2025</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">חברה:</span>
+                                <span class="mobile-summary-value">Alamo</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Car Rental Italy -->
@@ -1683,6 +1878,21 @@
                                 <i class="fas fa-link"></i>
                                 <div>קישור לקבלה</div>
                                 <a href="#" class="rental-link" target="_blank">הוסף קישור</a>
+                            </div>
+                        </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מקום:</span>
+                                <span class="mobile-summary-value">איטליה</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">תאריכים:</span>
+                                <span class="mobile-summary-value">26.8-30.8.2025</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">מ-אל:</span>
+                                <span class="mobile-summary-value">Novara → MXP</span>
                             </div>
                         </div>
                     </div>
@@ -2372,6 +2582,114 @@
              });
          }
 
+                 // Initialize mobile card click handlers
+         function initMobileCardHandlers() {
+             const flightCards = document.querySelectorAll('.flight-card');
+             
+             // Remove existing handlers first
+             flightCards.forEach(card => {
+                 // Clone node to remove all event listeners
+                 const newCard = card.cloneNode(true);
+                 card.parentNode.replaceChild(newCard, card);
+             });
+             
+             // Only add handlers on mobile screens
+             if (window.innerWidth <= 480) {
+                 const updatedCards = document.querySelectorAll('.flight-card');
+                 updatedCards.forEach(card => {
+                     card.style.cursor = 'pointer';
+                     card.addEventListener('click', function(e) {
+                         // Don't trigger if clicking edit button
+                         if (e.target.closest('.edit-controls')) return;
+                         
+                         const itemType = card.dataset.itemType;
+                         const itemId = card.dataset.itemId;
+                         showMobileDetailModal(itemType, itemId, card);
+                     });
+                 });
+             } else {
+                 // Remove cursor pointer on desktop
+                 const updatedCards = document.querySelectorAll('.flight-card');
+                 updatedCards.forEach(card => {
+                     card.style.cursor = 'default';
+                 });
+             }
+         }
+
+         // Show mobile detail modal
+         function showMobileDetailModal(itemType, itemId, cardElement) {
+             // Create modal if it doesn't exist
+             let modal = document.getElementById('mobileDetailModal');
+             if (!modal) {
+                 modal = document.createElement('div');
+                 modal.id = 'mobileDetailModal';
+                 modal.className = 'mobile-detail-modal';
+                 document.body.appendChild(modal);
+             }
+
+             // Get card details
+             const cardTitle = cardElement.querySelector('h3').textContent;
+             const flightInfo = cardElement.querySelector('.flight-info');
+             const details = Array.from(flightInfo.querySelectorAll('.flight-detail'));
+
+             // Build modal content
+             let modalContent = `
+                 <div class="mobile-detail-content">
+                     <div class="mobile-detail-header">
+                         <div class="mobile-detail-title">${cardTitle}</div>
+                         <button class="mobile-detail-close" onclick="closeMobileDetailModal()">
+                             <i class="fas fa-times"></i>
+                         </button>
+                     </div>
+                     <div class="mobile-detail-info">
+             `;
+
+             details.forEach(detail => {
+                 const icon = detail.querySelector('i');
+                 const label = detail.querySelector('div:not(.icon)');
+                 const value = detail.querySelector('strong') || detail.querySelector('a');
+                 
+                 if (icon && label && value) {
+                     let valueContent = value.innerHTML;
+                     modalContent += `
+                         <div class="mobile-detail-item">
+                             <i class="${icon.className}"></i>
+                             <span class="label">${label.textContent}</span>
+                             <span class="value">${valueContent}</span>
+                         </div>
+                     `;
+                 }
+             });
+
+             modalContent += `
+                     </div>
+                 </div>
+             `;
+
+             modal.innerHTML = modalContent;
+             modal.style.display = 'block';
+             
+             // Prevent body scrolling
+             document.body.style.overflow = 'hidden';
+         }
+
+         // Close mobile detail modal
+         function closeMobileDetailModal() {
+             const modal = document.getElementById('mobileDetailModal');
+             if (modal) {
+                 modal.style.display = 'none';
+                 document.body.style.overflow = 'auto';
+             }
+         }
+
+         // Close modal on background click
+         document.addEventListener('click', function(e) {
+             const modal = document.getElementById('mobileDetailModal');
+             if (modal && e.target === modal) {
+                 closeMobileDetailModal();
+             }
+         });
+
                  // Toggle destination content
          function toggleDestination(destId) {
              const content = document.getElementById(destId);
@@ -2619,7 +2937,8 @@
             initAutoSave();
             loadTripData();
             initCalendar();
-            initCollapsedSections();
+                             initCollapsedSections();
+                 initMobileCardHandlers();
             
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {
@@ -3693,7 +4012,17 @@
                     if (typeof buildCalendar === 'function') {
                         buildCalendar();
                     }
+                    
+                    // Reinitialize mobile card handlers
+                    initMobileCardHandlers();
                 }, 500);
+            });
+
+            // Handle window resize for mobile handlers
+            window.addEventListener('resize', function() {
+                setTimeout(() => {
+                    initMobileCardHandlers();
+                }, 200);
             });
             
             // Improve double-tap to zoom prevention
