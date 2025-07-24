@@ -32,7 +32,13 @@
             font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0 0 75px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: 
+                linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%),
+                url('dolomites-dolomiti-south-tyrol-travel-guides-tips.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             min-height: 100vh;
             color: var(--gray-800);
         }
@@ -47,6 +53,11 @@
             text-align: center;
             margin-bottom: 40px;
             color: white;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header h1 {
@@ -98,11 +109,13 @@
         }
 
         .map-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 30px;
             box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .map-header {
@@ -192,11 +205,13 @@
         }
 
         .destination-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .destination-card:hover {
@@ -1383,11 +1398,13 @@
         }
 
         .flights-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 10px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .flight-card {
@@ -1430,11 +1447,13 @@
 
         /* Calendar Styles */
         .calendar-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 30px;
             box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .calendar-container {
