@@ -460,26 +460,363 @@
             margin-left: 10px;
         }
 
-        @media (max-width: 768px) {
+        /* Enhanced Mobile Responsive Design */
+        
+        /* Small phones - up to 480px */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+            
+            .header p {
+                font-size: 0.9rem;
+            }
+            
+            .destination-header {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .destination-header h2 {
+                font-size: 1.4rem;
+                margin-bottom: 5px;
+            }
+            
+            .content-inner {
+                padding: 15px;
+            }
+            
+            .info-section h3 {
+                font-size: 1.1rem;
+            }
+            
+            .flight-card,
+            .map-container,
+            .calendar-section,
+            .flights-section {
+                margin-bottom: 15px;
+            }
+            
+            .flight-info {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 8px;
+            }
+            
+            .flight-detail {
+                padding: 10px;
+                text-align: center;
+            }
+            
+            .flight-detail strong {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .restaurants-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .activity-item,
+            .restaurant-item {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .floating-actions {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .edit-mode-indicator {
+                top: 10px;
+                font-size: 0.85rem;
+                padding: 8px 15px;
+            }
+            
+            .notification {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100px);
+                font-size: 0.9rem;
+                padding: 12px 15px;
+            }
+            
+            .notification.show {
+                transform: translateY(0);
+            }
+            
+            /* Mobile-friendly calendar */
+            .calendar-grid {
+                gap: 1px;
+                font-size: 0.8rem;
+            }
+            
+            .calendar-day {
+                min-height: 70px;
+                padding: 4px;
+            }
+            
+            .day-number {
+                font-size: 0.9rem;
+                margin-bottom: 3px;
+            }
+            
+            .day-location {
+                font-size: 0.55rem;
+                padding: 1px 4px;
+                margin-bottom: 2px;
+            }
+            
+            .day-activity {
+                font-size: 0.5rem;
+                padding: 1px 3px;
+                margin: 1px 0;
+            }
+            
+            .travel-indicator,
+            .flight-indicator {
+                width: 16px;
+                height: 16px;
+                font-size: 0.6rem;
+            }
+            
+            /* Mobile modal improvements */
+            .edit-modal-content {
+                width: 95%;
+                max-width: none;
+                padding: 20px;
+                margin: 10px;
+                max-height: 90vh;
+            }
+            
+            .edit-modal input,
+            .edit-modal select,
+            .edit-modal textarea {
+                font-size: 1rem; /* Prevent zoom on iOS */
+                padding: 12px;
+            }
+            
+            .edit-modal-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .edit-modal-btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 1rem;
+            }
+            
+            /* Touch-friendly search */
+            .search-box {
+                padding: 12px 20px;
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            
+            /* Better map on mobile */
+            #map {
+                height: 300px;
+            }
+            
+            .map-legend {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+            
+            .legend-items {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+        
+        /* Medium phones and small tablets - 481px to 768px */
+        @media (min-width: 481px) and (max-width: 768px) {
             .container {
                 padding: 15px;
             }
-
-            .content-inner {
-                padding: 20px;
+            
+            .header h1 {
+                font-size: 2.2rem;
             }
-
+            
             .destination-header {
                 padding: 20px;
             }
-
-            .activities-grid,
-            .restaurants-grid {
-                grid-template-columns: 1fr;
+            
+            .content-inner {
+                padding: 20px;
             }
-
-            .overview-grid {
+            
+            .flight-info {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 10px;
+            }
+            
+            .activities-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 12px;
+            }
+            
+            .restaurants-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 12px;
+            }
+            
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
+            }
+            
+            .calendar-day {
+                min-height: 85px;
+                padding: 6px;
+            }
+            
+            .day-location {
+                font-size: 0.65rem;
+            }
+            
+            .day-activity {
+                font-size: 0.6rem;
+            }
+            
+            #map {
+                height: 400px;
+            }
+        }
+        
+        /* Large tablets - 769px to 1024px */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .flight-info {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            
+            .activities-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+            
+            .restaurants-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+        
+        /* Touch and hover improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .floating-btn:hover {
+                transform: none;
+            }
+            
+            .floating-btn:active {
+                transform: scale(0.95);
+            }
+            
+            .activity-item:hover,
+            .restaurant-item:hover {
+                transform: none;
+            }
+            
+            .activity-item:active,
+            .restaurant-item:active {
+                transform: scale(0.98);
+                background: var(--accent-color);
+                color: white;
+            }
+            
+            .destination-header:hover {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            }
+            
+            .destination-header:active {
+                background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            }
+        }
+        
+        /* Landscape orientation adjustments */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .header {
+                margin-bottom: 20px;
+            }
+            
+            .calendar-day {
+                min-height: 60px;
+                padding: 3px;
+            }
+            
+            .day-activity {
+                display: none; /* Hide activities in landscape to save space */
+            }
+            
+            .floating-actions {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            #map {
+                height: 250px;
+            }
+        }
+        
+        /* Accessibility improvements for mobile */
+        @media (max-width: 768px) {
+            /* Larger touch targets */
+            .edit-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+            
+            .day-edit-btn {
+                padding: 6px;
+                font-size: 0.7rem;
+                min-height: 28px;
+            }
+            
+            /* Better focus indicators */
+            .editable-field:focus {
+                box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.3);
+            }
+            
+            /* Prevent horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+            
+            /* Better scrolling */
+            .destination-content {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* iOS Safari specific fixes */
+            .search-box,
+            .edit-modal input,
+            .edit-modal select {
+                -webkit-appearance: none;
+                border-radius: 8px;
             }
         }
 
@@ -1001,24 +1338,7 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .calendar-grid {
-                gap: 1px;
-            }
-            
-            .calendar-day {
-                min-height: 80px;
-                padding: 5px;
-            }
-            
-            .day-activity {
-                font-size: 0.6rem;
-            }
-            
-            .day-location {
-                font-size: 0.6rem;
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -3124,6 +3444,159 @@
         const styleSheet = document.createElement('style');
         styleSheet.textContent = printStyles;
         document.head.appendChild(styleSheet);
+
+        // Mobile-specific enhancements
+        function initMobileEnhancements() {
+            // Detect if user is on mobile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            if (isMobile || isTouchDevice) {
+                // Add mobile class to body
+                document.body.classList.add('mobile-device');
+                
+                // Improve scroll performance
+                document.addEventListener('touchstart', function() {}, { passive: true });
+                document.addEventListener('touchmove', function() {}, { passive: true });
+                
+                // Auto-hide floating buttons when scrolling on mobile
+                let scrollTimer;
+                const floatingActions = document.querySelector('.floating-actions');
+                
+                window.addEventListener('scroll', function() {
+                    if (floatingActions) {
+                        floatingActions.style.opacity = '0.3';
+                        floatingActions.style.pointerEvents = 'none';
+                        
+                        clearTimeout(scrollTimer);
+                        scrollTimer = setTimeout(() => {
+                            floatingActions.style.opacity = '1';
+                            floatingActions.style.pointerEvents = 'auto';
+                        }, 1000);
+                    }
+                }, { passive: true });
+                
+                // Improve modal experience on mobile
+                const originalCloseModal = closeEditModal;
+                window.closeEditModal = function() {
+                    // Restore body scroll when closing modal on mobile
+                    document.body.style.overflow = 'auto';
+                    originalCloseModal();
+                };
+                
+                // Prevent body scroll when modal is open
+                const originalEditItem = editItem;
+                window.editItem = function(type, itemId) {
+                    if (isMobile) {
+                        document.body.style.overflow = 'hidden';
+                    }
+                    originalEditItem(type, itemId);
+                };
+                
+                // Improve calendar day selection on mobile
+                const calendarDays = document.querySelectorAll('.calendar-day');
+                calendarDays.forEach(day => {
+                    day.addEventListener('touchstart', function() {
+                        this.style.backgroundColor = 'rgba(99, 179, 237, 0.1)';
+                    }, { passive: true });
+                    
+                    day.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.backgroundColor = '';
+                        }, 150);
+                    }, { passive: true });
+                });
+                
+                // Auto-collapse expanded sections when opening new ones on mobile
+                const destinationHeaders = document.querySelectorAll('.destination-header');
+                destinationHeaders.forEach(header => {
+                    header.addEventListener('click', function() {
+                        if (isMobile) {
+                            // Close other open destinations on mobile for better UX
+                            destinationHeaders.forEach(otherHeader => {
+                                if (otherHeader !== header) {
+                                    const content = otherHeader.nextElementSibling;
+                                    const icon = otherHeader.querySelector('.toggle-icon');
+                                    if (content && content.classList.contains('expanded')) {
+                                        content.classList.remove('expanded');
+                                        if (icon) {
+                                            icon.style.transform = 'translateY(-50%) rotate(0deg)';
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    });
+                });
+                
+                // Improve map interaction on mobile
+                if (map) {
+                    // Disable map interaction when scrolling on mobile
+                    let isScrolling = false;
+                    
+                    window.addEventListener('scroll', function() {
+                        isScrolling = true;
+                        map.dragging.disable();
+                        map.touchZoom.disable();
+                        map.doubleClickZoom.disable();
+                        map.scrollWheelZoom.disable();
+                        
+                        clearTimeout(scrollTimer);
+                        scrollTimer = setTimeout(() => {
+                            isScrolling = false;
+                            map.dragging.enable();
+                            map.touchZoom.enable();
+                            map.doubleClickZoom.enable();
+                        }, 500);
+                    }, { passive: true });
+                }
+                
+                // Add haptic feedback for supported devices
+                function hapticFeedback() {
+                    if (navigator.vibrate) {
+                        navigator.vibrate(10);
+                    }
+                }
+                
+                // Add haptic feedback to button interactions
+                document.querySelectorAll('.floating-btn, .edit-btn, .edit-modal-btn').forEach(button => {
+                    button.addEventListener('touchstart', hapticFeedback, { passive: true });
+                });
+            }
+            
+            // Handle orientation changes
+            window.addEventListener('orientationchange', function() {
+                setTimeout(() => {
+                    // Refresh map size after orientation change
+                    if (map) {
+                        map.invalidateSize();
+                    }
+                    
+                    // Rebuild calendar for better mobile layout
+                    if (typeof buildCalendar === 'function') {
+                        buildCalendar();
+                    }
+                }, 500);
+            });
+            
+            // Improve double-tap to zoom prevention
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        }
+        
+        // Initialize mobile enhancements
+        initMobileEnhancements();
+        
+        // Re-initialize on window resize
+        window.addEventListener('resize', function() {
+            initMobileEnhancements();
+        });
     </script>
 </body>
 </html>
