@@ -1394,7 +1394,7 @@
                 <i class="fas fa-chevron-down map-toggle-icon" id="flightsIcon"></i>
                 <h2><i class="fas fa-plane"></i> כרטיסי טיסה</h2>
             </div>
-            <div class="map-content expanded" id="flightsContent">
+                            <div class="map-content" id="flightsContent">
                 <div class="map-inner">
                     <!-- Outbound Flight: Tel Aviv to Vienna -->
                     <div class="flight-card editable-item" data-item-type="flight" data-item-id="outbound1">
@@ -1533,7 +1533,7 @@
                 <i class="fas fa-chevron-down map-toggle-icon" id="carRentalIcon"></i>
                 <h2><i class="fas fa-car"></i> השכרת רכב</h2>
             </div>
-            <div class="map-content expanded" id="carRentalContent">
+                            <div class="map-content" id="carRentalContent">
                 <div class="map-inner">
                     <!-- Car Rental Austria -->
                     <div class="flight-card editable-item" data-item-type="car-rental" data-item-id="car-rental-austria">
@@ -1660,7 +1660,7 @@
                 <i class="fas fa-chevron-down map-toggle-icon" id="calendarIcon"></i>
                 <h2><i class="fas fa-calendar-alt"></i> לוח שנה - מסלול הטיול</h2>
             </div>
-            <div class="map-content expanded" id="calendarContent">
+                            <div class="map-content" id="calendarContent">
                 <div class="calendar-inner">
                     <div class="calendar-container">
                         <h3 style="text-align: center; margin-bottom: 20px; color: var(--primary-color);">
@@ -1702,7 +1702,7 @@
                 <i class="fas fa-chevron-down map-toggle-icon" id="mapIcon"></i>
                 <h2><i class="fas fa-map"></i> מפת המסלול</h2>
             </div>
-            <div class="map-content expanded" id="mapContent">
+                            <div class="map-content" id="mapContent">
                 <div class="map-inner">
                     <div id="map"></div>
                     <div class="map-legend">
@@ -1760,9 +1760,6 @@
                                     <div>מרחק</div>
                                     <div><strong>~62 ק"מ</strong></div>
                                 </div>
-                            </div>
-                            <div style="background: rgba(34, 197, 94, 0.1); padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.9em; border: 1px solid rgba(34, 197, 94, 0.2);">
-                                <strong>✅ מעולה:</strong> טיסת חיבור מווינה לאינסברוק מאושרת! איסוף רכב ישירות מהשדה
                             </div>
                         </div>
 
@@ -2291,6 +2288,54 @@
              });
         }
 
+                 // Initialize all sections as collapsed
+         function initCollapsedSections() {
+             // Find all destination content elements
+             const destinationContents = document.querySelectorAll('.destination-content');
+             destinationContents.forEach(content => {
+                 // Remove expanded class if it exists
+                 content.classList.remove('expanded');
+                 
+                 // Set corresponding icon to collapsed state
+                 const destId = content.id;
+                 const iconId = destId.replace('dest', 'icon');
+                 const icon = document.getElementById(iconId);
+                 if (icon) {
+                     icon.style.transform = 'translateY(-50%) rotate(0deg)';
+                 }
+             });
+
+             // Find all map content elements and collapse them too
+             const mapContents = document.querySelectorAll('.map-content');
+             mapContents.forEach(content => {
+                 // Remove expanded class if it exists
+                 content.classList.remove('expanded');
+                 
+                 // Set corresponding icon to collapsed state based on content id
+                 const contentId = content.id;
+                 let iconId = '';
+                 switch(contentId) {
+                     case 'flightsContent':
+                         iconId = 'flightsIcon';
+                         break;
+                     case 'carRentalContent':
+                         iconId = 'carIcon';
+                         break;
+                     case 'calendarContent':
+                         iconId = 'calendarIcon';
+                         break;
+                     case 'mapContent':
+                         iconId = 'mapIcon';
+                         break;
+                 }
+                 
+                 const icon = document.getElementById(iconId);
+                 if (icon) {
+                     icon.style.transform = 'translateY(-50%) rotate(0deg)';
+                 }
+             });
+         }
+
                  // Toggle destination content
          function toggleDestination(destId) {
              const content = document.getElementById(destId);
@@ -2538,6 +2583,7 @@
             initAutoSave();
             loadTripData();
             initCalendar();
+            initCollapsedSections();
             
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {
