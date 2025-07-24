@@ -31,7 +31,7 @@
         body {
             font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 0 0 75px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: var(--gray-800);
@@ -50,13 +50,13 @@
         }
 
         .header h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin: 0 0 10px 0;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            margin: 0 0 8px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
             margin: 0;
         }
@@ -218,12 +218,12 @@
         }
 
         .destination-header h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.8rem;
+            margin: 0 0 8px 0;
+            font-size: 1.4rem;
         }
 
         .destination-date {
-            font-size: 1rem;
+            font-size: 0.85rem;
             opacity: 0.9;
             margin: 0;
         }
@@ -257,21 +257,22 @@
 
         .info-section h3 {
             color: var(--primary-color);
-            margin: 0 0 15px 0;
-            font-size: 1.3rem;
+            margin: 0 0 12px 0;
+            font-size: 1.1rem;
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         .editable-field {
             background: var(--gray-100);
             border: 2px solid var(--gray-300);
             border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 8px;
             transition: all 0.3s ease;
-            min-height: 45px;
+            min-height: 38px;
             cursor: text;
+            font-size: 0.9rem;
         }
 
         .editable-field:hover {
@@ -299,11 +300,12 @@
 
         .activity-item {
             background: var(--gray-100);
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border: 2px solid transparent;
             transition: all 0.3s ease;
             cursor: default;
+            font-size: 0.85rem;
         }
 
         .activity-item:hover {
@@ -338,10 +340,11 @@
 
         .restaurant-item {
             background: var(--gray-100);
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border: 2px solid transparent;
             transition: all 0.3s ease;
+            font-size: 0.85rem;
         }
 
         .restaurant-item:hover {
@@ -364,8 +367,8 @@
         }
 
         .travel-info h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
+            margin: 0 0 8px 0;
+            font-size: 1rem;
         }
 
         .travel-details {
@@ -534,15 +537,15 @@
             }
             
             .floating-actions {
-                bottom: 15px;
-                right: 15px;
-                gap: 10px;
+                padding: 10px 12px;
+                gap: 6px;
             }
             
             .floating-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+                border-radius: 10px;
             }
             
             .edit-mode-indicator {
@@ -683,9 +686,9 @@
             }
             
             .floating-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
+                width: 46px;
+                height: 46px;
+                font-size: 1.15rem;
             }
             
             .calendar-day {
@@ -732,7 +735,8 @@
             }
             
             .floating-btn:active {
-                transform: scale(0.95);
+                transform: translateY(1px);
+                box-shadow: var(--shadow);
             }
             
             .activity-item:hover,
@@ -772,8 +776,8 @@
             }
             
             .floating-actions {
-                bottom: 10px;
-                right: 10px;
+                padding: 8px 10px;
+                gap: 4px;
             }
             
             #map {
@@ -858,11 +862,11 @@
 
         .search-box {
             width: 100%;
-            padding: 15px;
+            padding: 12px 18px;
             border: 2px solid var(--gray-300);
-            border-radius: 25px;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
             transition: border-color 0.3s ease;
         }
 
@@ -873,25 +877,57 @@
 
         .floating-actions {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 0;
+            left: 0;
+            right: 0;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--gray-300);
+            padding: 12px 16px;
+            gap: 8px;
             z-index: 999;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .floating-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            max-width: 64px;
+        }
+
+        .floating-btn::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6rem;
+            color: var(--gray-600);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .floating-btn:hover::after {
+            opacity: 1;
         }
 
         .floating-btn.save-all {
@@ -920,7 +956,8 @@
         }
 
         .floating-btn:hover {
-            transform: scale(1.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         @keyframes pulse {
@@ -2055,19 +2092,19 @@
 
     <!-- Floating Actions -->
     <div class="floating-actions">
-        <button class="floating-btn edit-mode" onclick="toggleEditMode()" title="מצב עריכה" id="editModeBtn">
+        <button class="floating-btn edit-mode" onclick="toggleEditMode()" title="מצב עריכה" data-tooltip="ערוך" id="editModeBtn">
             <i class="fas fa-edit"></i>
         </button>
-        <button class="floating-btn save-all" onclick="saveAllData()" title="שמור את כל השינויים">
+        <button class="floating-btn save-all" onclick="saveAllData()" title="שמור את כל השינויים" data-tooltip="שמור">
             <i class="fas fa-save"></i>
         </button>
-        <button class="floating-btn export-data" onclick="exportData()" title="יצא נתונים">
+        <button class="floating-btn export-data" onclick="exportData()" title="יצא נתונים" data-tooltip="יצא">
             <i class="fas fa-download"></i>
         </button>
-        <button class="floating-btn import-data" onclick="importData()" title="יבא נתונים">
+        <button class="floating-btn import-data" onclick="importData()" title="יבא נתונים" data-tooltip="יבא">
             <i class="fas fa-upload"></i>
         </button>
-        <button class="floating-btn back-to-top" onclick="scrollToTop()" title="חזור לראש הדף">
+        <button class="floating-btn back-to-top" onclick="scrollToTop()" title="חזור לראש הדף" data-tooltip="למעלה">
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
@@ -3459,20 +3496,18 @@
                 document.addEventListener('touchstart', function() {}, { passive: true });
                 document.addEventListener('touchmove', function() {}, { passive: true });
                 
-                // Auto-hide floating buttons when scrolling on mobile
+                // Auto-hide floating toolbar when scrolling on mobile
                 let scrollTimer;
                 const floatingActions = document.querySelector('.floating-actions');
                 
                 window.addEventListener('scroll', function() {
                     if (floatingActions) {
-                        floatingActions.style.opacity = '0.3';
-                        floatingActions.style.pointerEvents = 'none';
+                        floatingActions.style.transform = 'translateY(100%)';
                         
                         clearTimeout(scrollTimer);
                         scrollTimer = setTimeout(() => {
-                            floatingActions.style.opacity = '1';
-                            floatingActions.style.pointerEvents = 'auto';
-                        }, 1000);
+                            floatingActions.style.transform = 'translateY(0)';
+                        }, 800);
                     }
                 }, { passive: true });
                 
