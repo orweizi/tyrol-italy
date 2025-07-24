@@ -50,13 +50,13 @@
         }
 
         .header h1 {
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            margin: 0 0 8px 0;
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
+            margin: 0 0 6px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header p {
-            font-size: 1rem;
+            font-size: 0.85rem;
             opacity: 0.9;
             margin: 0;
         }
@@ -218,12 +218,12 @@
         }
 
         .destination-header h2 {
-            margin: 0 0 8px 0;
-            font-size: 1.4rem;
+            margin: 0 0 6px 0;
+            font-size: 1.1rem;
         }
 
         .destination-date {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             opacity: 0.9;
             margin: 0;
         }
@@ -257,10 +257,10 @@
 
         .info-section h3 {
             color: var(--primary-color);
-            margin: 0 0 12px 0;
-            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            font-size: 0.95rem;
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 4px;
+            padding-bottom: 3px;
         }
 
         .editable-field {
@@ -468,7 +468,11 @@
         /* Small phones - up to 480px */
         @media (max-width: 480px) {
             .container {
-                padding: 10px;
+                padding: 8px;
+            }
+            
+            .content-inner {
+                padding: 15px;
             }
             
             .header h1 {
@@ -568,31 +572,44 @@
             }
             
             /* Mobile-friendly calendar */
+            .calendar-inner {
+                padding: 12px;
+            }
+            
+            .calendar-header {
+                padding: 8px;
+                font-size: 0.75rem;
+            }
+            
             .calendar-grid {
                 gap: 1px;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+                margin-bottom: 12px;
+                max-width: 100%;
+                overflow-x: auto;
             }
             
             .calendar-day {
-                min-height: 70px;
-                padding: 4px;
+                min-height: 60px;
+                padding: 3px;
             }
             
             .day-number {
-                font-size: 0.9rem;
-                margin-bottom: 3px;
-            }
-            
-            .day-location {
-                font-size: 0.55rem;
-                padding: 1px 4px;
+                font-size: 0.8rem;
                 margin-bottom: 2px;
             }
             
-            .day-activity {
+            .day-location {
                 font-size: 0.5rem;
                 padding: 1px 3px;
+                margin-bottom: 1px;
+            }
+            
+            .day-activity {
+                font-size: 0.45rem;
+                padding: 1px 2px;
                 margin: 1px 0;
+                line-height: 1.1;
             }
             
             .travel-indicator,
@@ -600,6 +617,16 @@
                 width: 16px;
                 height: 16px;
                 font-size: 0.6rem;
+            }
+            
+            .calendar-legend {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin-top: 15px;
+            }
+            
+            .legend-item-cal {
+                font-size: 0.8rem;
             }
             
             /* Mobile modal improvements */
@@ -691,9 +718,17 @@
                 font-size: 1.15rem;
             }
             
+            .calendar-inner {
+                padding: 20px;
+            }
+            
+            .calendar-grid {
+                margin-bottom: 20px;
+            }
+            
             .calendar-day {
-                min-height: 85px;
-                padding: 6px;
+                min-height: 75px;
+                padding: 5px;
             }
             
             .day-location {
@@ -1198,6 +1233,7 @@
 
         .calendar-container {
             padding: 0;
+            overflow-x: auto;
         }
 
         .calendar-inner {
