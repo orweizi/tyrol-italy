@@ -1824,6 +1824,75 @@
             </div>
         </section>
 
+        <!-- Accommodation Section -->
+        <section class="flights-section">
+            <div class="map-header" onclick="toggleAccommodation()">
+                <i class="fas fa-chevron-down map-toggle-icon" id="accommodationIcon"></i>
+                <h2><i class="fas fa-bed"></i> מקומות לינה</h2>
+            </div>
+            <div class="map-content" id="accommodationContent">
+                <div class="map-inner">
+                    <!-- Hotel Booking: Resort Schrofenblick -->
+                    <div class="flight-card editable-item" data-item-type="accommodation" data-item-id="hotel1">
+                        <div class="edit-controls">
+                            <button class="edit-btn edit" onclick="editItem('accommodation', 'hotel1')" title="ערוך">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <h3><i class="fas fa-hotel"></i> Resort Schrofenblick - Mayrhofen</h3>
+                        <div class="flight-info">
+                            <div class="flight-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>כתובת</div>
+                                <strong class="hotel-address">373 Burgstall, 6290 Mayrhofen, Austria</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>צ'ק-אין</div>
+                                <strong class="checkin-date">יום שני, 18 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-times"></i>
+                                <div>צ'ק-אאוט</div>
+                                <strong class="checkout-date">יום חמישי, 21 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>מספר לילות</div>
+                                <strong>3 לילות</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-confirmation-number"></i>
+                                <div>מספר הזמנה</div>
+                                <strong>5830768918</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-file-alt"></i>
+                                <div>מסמך</div>
+                                <strong><a href="docs/resort-Booking.com_18-21.pdf" target="_blank" class="doc-link">אישור הזמנה PDF</a></strong>
+                            </div>
+                        </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">🏨</span>
+                                <span class="mobile-summary-value">Resort Schrofenblick • Mayrhofen</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">📅</span>
+                                <span class="mobile-summary-value">18-21 אוגוסט • 3 לילות</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">🔢</span>
+                                <span class="mobile-summary-value">הזמנה: 5830768918</span>
+                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Car Rental Section -->
         <section class="flights-section">
             <div class="map-header" onclick="toggleCarRental()">
@@ -2920,6 +2989,17 @@
                  : 'translateY(-50%) rotate(0deg)';
          }
 
+         // Toggle accommodation content
+         function toggleAccommodation() {
+             const content = document.getElementById('accommodationContent');
+             const icon = document.getElementById('accommodationIcon');
+             
+             content.classList.toggle('expanded');
+             icon.style.transform = content.classList.contains('expanded') 
+                 ? 'translateY(-50%) rotate(180deg)' 
+                 : 'translateY(-50%) rotate(0deg)';
+         }
+
          // Toggle car rental content
          function toggleCarRental() {
              const content = document.getElementById('carRentalContent');
@@ -3032,27 +3112,27 @@
             '2025-08-18': {
                 type: 'travel',
                 location: 'נסיעה לטירול',
-                activities: ['טיסת חיבור וינה → אינסברוק (06:50-07:45)', 'איסוף רכב (09:00)', 'נסיעה ל-Alpbach (~55 דק)'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                activities: ['טיסת חיבור וינה → אינסברוק (06:50-07:45)', 'איסוף רכב (09:00)', 'נסיעה ל-Mayrhofen (~45 דק)', 'צ\'ק-אין למלון'],
+                accommodation: 'Resort Schrofenblick - Mayrhofen'
             },
-            // Alpbach, Tyrol - 7 nights (18-25.8)
+            // Mayrhofen, Tyrol - 3 nights (18-21.8)
             '2025-08-19': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['Lauserland - פארק פסגות לילדים', 'הכרת האזור'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['חקר Mayrhofen', 'רכבל Penkenbahn', 'הכרת האזור'],
+                accommodation: 'Resort Schrofenblick - Mayrhofen'
             },
             '2025-08-20': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['Achensee Shipping', 'Achenseebahn - רכבת קיטור'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['Zillertal Valley', 'פעילויות מקומיות', 'נופים אלפיניים'],
+                accommodation: 'Resort Schrofenblick - Mayrhofen'
             },
             '2025-08-21': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['Drachental Family Park', 'Reintalersee Lake'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['צ\'ק-אאוט מהמלון', 'נסיעה ליעד הבא'],
+                accommodation: 'Resort Schrofenblick - Mayrhofen (עד הבוקר)'
             },
             '2025-08-22': {
                 type: 'trip',
@@ -3466,6 +3546,8 @@
                 editCarRental(itemId, itemElement);
             } else if (type === 'car-contact') {
                 editCarContact(itemId, itemElement);
+            } else if (type === 'accommodation') {
+                editAccommodation(itemId, itemElement);
             } else {
                 editActivityOrRestaurant(itemId, itemElement);
             }
@@ -3637,6 +3719,66 @@
             modal.classList.add('show');
         }
 
+        function editAccommodation(itemId, element) {
+            const modal = document.getElementById('editModal');
+            const modalContent = modal.querySelector('.edit-modal-content');
+            
+            // Store original content
+            if (!modal.originalContent) {
+                modal.originalContent = modalContent.innerHTML;
+            }
+            
+            // Get current values from the accommodation element
+            const flightDetails = element.querySelectorAll('.flight-detail strong');
+            const hotelAddress = flightDetails[0]?.textContent || '';
+            const checkinDate = flightDetails[1]?.textContent || '';
+            const checkoutDate = flightDetails[2]?.textContent || '';
+            const reservationNumber = flightDetails[4]?.textContent || '';
+            const hotelTitle = element.querySelector('h3')?.textContent.replace(/^.*\s/, '') || '';
+            const docLink = element.querySelector('.doc-link');
+            
+            modalContent.innerHTML = `
+                <h3>ערוך פרטי מקום לינה</h3>
+                
+                <label>שם המלון:</label>
+                <input type="text" id="hotelName" value="${hotelTitle}" placeholder="Resort Schrofenblick">
+                
+                <label>כתובת:</label>
+                <input type="text" id="hotelAddress" value="${hotelAddress}" placeholder="373 Burgstall, 6290 Mayrhofen, Austria">
+                
+                <label>תאריך צ'ק-אין:</label>
+                <input type="date" id="checkinDate" value="${checkinDate ? hebrewDateToInput(checkinDate) : ''}">
+                
+                <label>תאריך צ'ק-אאוט:</label>
+                <input type="date" id="checkoutDate" value="${checkoutDate ? hebrewDateToInput(checkoutDate) : ''}">
+                
+                <label>מספר הזמנה:</label>
+                <input type="text" id="reservationNumber" value="${reservationNumber}" placeholder="5830768918">
+                
+                <label>קישור למסמך:</label>
+                <input type="url" id="docLink" value="${docLink && docLink.href !== location.href + '#' ? docLink.href : ''}" placeholder="docs/resort-Booking.com_18-21.pdf">
+                
+                <div class="edit-modal-buttons">
+                    <button class="edit-modal-btn cancel" onclick="closeEditModal()">ביטול</button>
+                    <button class="edit-modal-btn save" onclick="saveAccommodation()">שמור</button>
+                </div>
+            `;
+            
+            modal.classList.add('show');
+        }
+
+        // Helper function to convert Hebrew date to input format
+        function hebrewDateToInput(hebrewDate) {
+            // Convert "יום שני, 18 באוגוסט 2025" to "2025-08-18"
+            const match = hebrewDate.match(/(\d{1,2})\s+באוגוסט\s+(\d{4})/);
+            if (match) {
+                const day = match[1].padStart(2, '0');
+                const year = match[2];
+                return `${year}-08-${day}`;
+            }
+            return '';
+        }
+
         function editActivityOrRestaurant(itemId, element) {
             const modal = document.getElementById('editModal');
             const title = document.getElementById('modalTitle');
@@ -3769,6 +3911,62 @@
             
             saveAllData();
             closeEditModal();
+        }
+
+        // Save Accommodation
+        function saveAccommodation() {
+            if (!currentEditItem) return;
+            
+            const itemElement = document.querySelector(`[data-item-id="${currentEditItem.itemId}"]`);
+            
+            // Get input values
+            const hotelName = document.getElementById('hotelName').value;
+            const hotelAddress = document.getElementById('hotelAddress').value;
+            const checkinDate = document.getElementById('checkinDate').value;
+            const checkoutDate = document.getElementById('checkoutDate').value;
+            const reservationNumber = document.getElementById('reservationNumber').value;
+            const docLink = document.getElementById('docLink').value;
+            
+            // Update elements
+            const h3Element = itemElement.querySelector('h3');
+            if (h3Element) {
+                h3Element.innerHTML = `<i class="fas fa-hotel"></i> ${hotelName}`;
+            }
+            
+            const flightDetails = itemElement.querySelectorAll('.flight-detail strong');
+            if (flightDetails[0]) flightDetails[0].textContent = hotelAddress || '';
+            if (flightDetails[1]) flightDetails[1].textContent = checkinDate ? inputToHebrewDate(checkinDate) : '';
+            if (flightDetails[2]) flightDetails[2].textContent = checkoutDate ? inputToHebrewDate(checkoutDate) : '';
+            if (flightDetails[4]) flightDetails[4].textContent = reservationNumber || '';
+            
+            const linkElement = itemElement.querySelector('.doc-link');
+            if (linkElement) {
+                linkElement.href = docLink || '#';
+                linkElement.textContent = docLink ? 'אישור הזמנה PDF' : 'הוסף קישור';
+            }
+            
+            // Update mobile summary
+            const mobileSummaryValues = itemElement.querySelectorAll('.mobile-summary-value');
+            if (mobileSummaryValues[0]) {
+                mobileSummaryValues[0].textContent = `${hotelName} • ${hotelAddress.split(',')[1]?.trim() || hotelAddress}`;
+            }
+            if (mobileSummaryValues[2]) {
+                mobileSummaryValues[2].textContent = `הזמנה: ${reservationNumber}`;
+            }
+            
+            saveAllData();
+            closeEditModal();
+        }
+
+        // Helper function to convert input date to Hebrew date
+        function inputToHebrewDate(inputDate) {
+            // Convert "2025-08-18" to "יום שני, 18 באוגוסט 2025"
+            const date = new Date(inputDate);
+            const days = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת'];
+            const dayName = days[date.getDay()];
+            const day = date.getDate();
+            const year = date.getFullYear();
+            return `יום ${dayName}, ${day} באוגוסט ${year}`;
         }
 
         // Close Edit Modal
