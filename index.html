@@ -1889,6 +1889,64 @@
                             <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
                         </div>
                     </div>
+
+                    <!-- Hotel Booking: Milan -->
+                    <div class="flight-card editable-item" data-item-type="accommodation" data-item-id="hotel2">
+                        <div class="edit-controls">
+                            <button class="edit-btn edit" onclick="editItem('accommodation', 'hotel2')" title="ערוך">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <h3><i class="fas fa-hotel"></i> מלון במילאנו</h3>
+                        <div class="flight-info">
+                            <div class="flight-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>כתובת</div>
+                                <strong class="hotel-address">מילאנו, איטליה</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>צ'ק-אין</div>
+                                <strong class="checkin-date">יום חמישי, 28 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-times"></i>
+                                <div>צ'ק-אאוט</div>
+                                <strong class="checkout-date">יום ראשון, 31 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>מספר לילות</div>
+                                <strong>3 לילות</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-confirmation-number"></i>
+                                <div>מספר הזמנה</div>
+                                <strong>להוסיף</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-file-alt"></i>
+                                <div>מסמך</div>
+                                <strong><a href="#" target="_blank" class="doc-link">הוסף קישור</a></strong>
+                            </div>
+                        </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">🏨</span>
+                                <span class="mobile-summary-value">מלון במילאנו • איטליה</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">📅</span>
+                                <span class="mobile-summary-value">28-31 אוגוסט • 3 לילות</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">🔢</span>
+                                <span class="mobile-summary-value">הזמנה: להוסיף</span>
+                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2307,8 +2365,8 @@
             <div class="destination-card" data-destination="orta">
                 <div class="destination-header" onclick="toggleDestination('dest2')">
                     <i class="fas fa-chevron-down toggle-icon" id="icon2"></i>
-                    <h2>🏞️ Pettenasco/Orta - אגם אורטה</h2>
-                    <p class="destination-date">25-30 באוגוסט • 5 לילות</p>
+                    <h2>🏞️ אגם אורטה ו🏙️ מילאנו</h2>
+                    <p class="destination-date">25-31 באוגוסט • אורטה (25-27) + מילאנו (28-31)</p>
                 </div>
                 <div class="destination-content" id="dest2">
                     <div class="content-inner">
@@ -3172,27 +3230,27 @@
                 accommodation: 'אגם אורטה - Agriturismo La Darina'
             },
             '2025-08-28': {
-                type: 'trip',
-                location: 'אגם אורטה',
-                activities: ['Alpyland - Monte Mottarone', 'נופים ופעילויות'],
-                accommodation: 'אגם אורטה - Agriturismo La Darina'
+                type: 'travel',
+                location: 'נסיעה למילאנו',
+                activities: ['נסיעה למילאנו', 'צ\'ק-אין למלון', 'חקר העיר'],
+                accommodation: 'מלון במילאנו'
             },
             '2025-08-29': {
                 type: 'trip',
-                location: 'אגם אורטה',
-                activities: ['Leolandia Theme Park', 'יום משפחתי'],
-                accommodation: 'אגם אורטה - Agriturismo La Darina'
+                location: 'מילאנו',
+                activities: ['Duomo di Milano', 'Galleria Vittorio Emanuele II', 'La Scala'],
+                accommodation: 'מלון במילאנו'
             },
             '2025-08-30': {
-                type: 'travel',
-                location: 'נסיעה למלפנסה',
-                activities: ['החזרת רכב', 'נסיעה למלון שדה התעופה', 'הכנות לטיסה'],
-                accommodation: 'מלון שדה התעופה מלפנסה'
+                type: 'trip',
+                location: 'מילאנו',
+                activities: ['Navigli District', 'קניות', 'הכנות לטיסה'],
+                accommodation: 'מלון במילאנו'
             },
             '2025-08-31': {
                 type: 'flight',
                 location: 'טיסה חזרה',
-                activities: ['טיסה אלעל מלפנסה → תל אביב (00:30)', 'נחיתה 05:15', 'חזרה הביתה'],
+                activities: ['צ\'ק-אאוט מהמלון', 'נסיעה למלפנסה', 'טיסה אלעל מלפנסה → תל אביב (00:30)', 'נחיתה 05:15'],
                 accommodation: 'חזרה הביתה'
             }
         };
