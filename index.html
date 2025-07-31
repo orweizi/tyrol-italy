@@ -1636,6 +1636,109 @@
             opacity: 1;
         }
 
+        /* Checklist Styles */
+        .checklist-section {
+            margin-bottom: 30px;
+        }
+
+        .checklist-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .checklist-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            background: var(--gray-100);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item.completed {
+            background: rgba(56, 161, 105, 0.1);
+            border-color: var(--success-color);
+        }
+
+        .checklist-item:hover {
+            background: rgba(44, 82, 130, 0.05);
+            transform: translateX(5px);
+        }
+
+        .checklist-checkbox {
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--success-color);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            display: block;
+        }
+
+        .checklist-label strong {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .checklist-detail {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .checklist-item.completed .checklist-label strong {
+            color: var(--success-color);
+        }
+
+        .checklist-item.completed .checklist-detail {
+            color: var(--success-color);
+        }
+
+        /* Mobile Checklist Styles */
+        @media (max-width: 480px) {
+            .checklist-section h3 {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .checklist-item {
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .checklist-checkbox {
+                width: 18px;
+                height: 18px;
+                margin-left: 10px;
+            }
+
+            .checklist-label strong {
+                font-size: 0.85rem;
+            }
+
+            .checklist-detail {
+                font-size: 0.8rem;
+            }
+        }
+
 
     </style>
 </head>
@@ -2598,6 +2701,185 @@
         </div>
     </div>
 
+    <!-- Travel Checklist Section -->
+    <section class="flights-section">
+        <div class="map-header" onclick="toggleChecklist()">
+            <i class="fas fa-chevron-down map-toggle-icon" id="checklistIcon"></i>
+            <h2><i class="fas fa-check-square"></i> רשימת מטלות לטיול</h2>
+        </div>
+        <div class="map-content" id="checklistContent">
+            <div class="map-inner">
+                <!-- Accommodations Checklist -->
+                <div class="checklist-section">
+                    <h3><i class="fas fa-bed"></i> מקומות לינה לזמינות</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="accommodation-vienna" class="checklist-checkbox">
+                            <label for="accommodation-vienna">
+                                <div class="checklist-label">
+                                    <strong>וינה - 17 באוגוסט</strong>
+                                    <div class="checklist-detail">1 לילה ליד שדה התעופה</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item completed">
+                            <input type="checkbox" id="accommodation-mayrhofen" class="checklist-checkbox" checked>
+                            <label for="accommodation-mayrhofen">
+                                <div class="checklist-label">
+                                    <strong>Resort Schrofenblick - Mayrhofen</strong>
+                                    <div class="checklist-detail">18-21 באוגוסט • 3 לילות • ✅ הוזמן</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="accommodation-alpbach" class="checklist-checkbox">
+                            <label for="accommodation-alpbach">
+                                <div class="checklist-label">
+                                    <strong>אלפבך/טירול - 21-25 באוגוסט</strong>
+                                    <div class="checklist-detail">4 לילות באזור האלפים</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="accommodation-orta" class="checklist-checkbox">
+                            <label for="accommodation-orta">
+                                <div class="checklist-label">
+                                    <strong>אגם אורטה - 25-28 באוגוסט</strong>
+                                    <div class="checklist-detail">3 לילות באזור האגם</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="accommodation-milan" class="checklist-checkbox">
+                            <label for="accommodation-milan">
+                                <div class="checklist-label">
+                                    <strong>מילאנו - 28-31 באוגוסט</strong>
+                                    <div class="checklist-detail">3 לילות במרכז העיר</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transportation Checklist -->
+                <div class="checklist-section">
+                    <h3><i class="fas fa-car"></i> תחבורה להזמנה מראש</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item completed">
+                            <input type="checkbox" id="transport-flights" class="checklist-checkbox" checked>
+                            <label for="transport-flights">
+                                <div class="checklist-label">
+                                    <strong>טיסות</strong>
+                                    <div class="checklist-detail">תל אביב ⇄ אירופה • ✅ הוזמן</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item completed">
+                            <input type="checkbox" id="transport-car-austria" class="checklist-checkbox" checked>
+                            <label for="transport-car-austria">
+                                <div class="checklist-label">
+                                    <strong>השכרת רכב - אוסטריה</strong>
+                                    <div class="checklist-detail">אינסברוק 18-25 באוגוסט • ✅ הוזמן</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="transport-car-italy" class="checklist-checkbox">
+                            <label for="transport-car-italy">
+                                <div class="checklist-label">
+                                    <strong>השכרת רכב - איטליה</strong>
+                                    <div class="checklist-detail">25-31 באוגוסט • אגם אורטה + מילאנו</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="transport-train-austria" class="checklist-checkbox">
+                            <label for="transport-train-austria">
+                                <div class="checklist-label">
+                                    <strong>רכבות באוסטריה</strong>
+                                    <div class="checklist-detail">הזמנות מראש אם נדרש</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="transport-train-italy" class="checklist-checkbox">
+                            <label for="transport-train-italy">
+                                <div class="checklist-label">
+                                    <strong>רכבות באיטליה</strong>
+                                    <div class="checklist-detail">הזמנות מראש אם נדרש</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="transport-transfers" class="checklist-checkbox">
+                            <label for="transport-transfers">
+                                <div class="checklist-label">
+                                    <strong>הסעות שדה תעופה</strong>
+                                    <div class="checklist-detail">וינה ⇄ מלון • מילפנסה ⇄ מלון</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Tasks -->
+                <div class="checklist-section">
+                    <h3><i class="fas fa-tasks"></i> משימות נוספות</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-insurance" class="checklist-checkbox">
+                            <label for="task-insurance">
+                                <div class="checklist-label">
+                                    <strong>ביטוח נסיעות</strong>
+                                    <div class="checklist-detail">כיסוי רפואי וביטול טיסות</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-currency" class="checklist-checkbox">
+                            <label for="task-currency">
+                                <div class="checklist-label">
+                                    <strong>יורו מזומן</strong>
+                                    <div class="checklist-detail">החלפת כסף לנסיעה</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-esim" class="checklist-checkbox">
+                            <label for="task-esim">
+                                <div class="checklist-label">
+                                    <strong>eSIM/תקשורת</strong>
+                                    <div class="checklist-detail">אינטרנט באירופה</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task-attractions" class="checklist-checkbox">
+                            <label for="task-attractions">
+                                <div class="checklist-label">
+                                    <strong>כרטיסים לאטרקציות</strong>
+                                    <div class="checklist-detail">הזמנות מראש אם נדרש</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hidden file input for import -->
     <input type="file" id="fileInput" accept=".json" class="hidden" onchange="handleFileImport(event)">
 
@@ -3080,6 +3362,17 @@
                  : 'translateY(-50%) rotate(0deg)';
          }
 
+         // Toggle checklist content
+         function toggleChecklist() {
+             const content = document.getElementById('checklistContent');
+             const icon = document.getElementById('checklistIcon');
+             
+             content.classList.toggle('expanded');
+             icon.style.transform = content.classList.contains('expanded') 
+                 ? 'translateY(-50%) rotate(180deg)' 
+                 : 'translateY(-50%) rotate(0deg)';
+         }
+
         // Search functionality
         function initSearch() {
             const searchBox = document.getElementById('searchBox');
@@ -3255,6 +3548,56 @@
             }
         };
 
+        // Checklist functionality
+        function initChecklist() {
+            // Load saved checklist state
+            const savedChecklist = localStorage.getItem('travelChecklist');
+            if (savedChecklist) {
+                const checklistState = JSON.parse(savedChecklist);
+                
+                // Apply saved states to checkboxes
+                Object.keys(checklistState).forEach(checkboxId => {
+                    const checkbox = document.getElementById(checkboxId);
+                    const item = checkbox?.closest('.checklist-item');
+                    if (checkbox && checklistState[checkboxId]) {
+                        checkbox.checked = true;
+                        if (item) {
+                            item.classList.add('completed');
+                        }
+                    }
+                });
+            }
+            
+            // Add event listeners to all checkboxes
+            const checkboxes = document.querySelectorAll('.checklist-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.checklist-item');
+                    
+                    // Update visual state
+                    if (this.checked) {
+                        item.classList.add('completed');
+                    } else {
+                        item.classList.remove('completed');
+                    }
+                    
+                    // Save to localStorage
+                    saveChecklistState();
+                });
+            });
+        }
+        
+        function saveChecklistState() {
+            const checkboxes = document.querySelectorAll('.checklist-checkbox');
+            const checklistState = {};
+            
+            checkboxes.forEach(checkbox => {
+                checklistState[checkbox.id] = checkbox.checked;
+            });
+            
+            localStorage.setItem('travelChecklist', JSON.stringify(checklistState));
+        }
+
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
             initMap();
@@ -3265,6 +3608,7 @@
             initCalendar();
                              initCollapsedSections();
                  initMobileCardHandlers();
+            initChecklist();
             
             // Add keyboard shortcuts
             document.addEventListener('keydown', function(e) {
