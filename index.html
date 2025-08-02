@@ -3604,8 +3604,8 @@
             '2025-08-25': {
                 type: 'travel',
                 location: 'נסיעה לאיטליה',
-                activities: ['החזרת רכב Alamo באינסברוק (12:00)', 'רכבת לנובארה', 'איסוף רכב והגעה לאגם אורטה'],
-                accommodation: 'אגם אורטה - Agriturismo La Darina'
+                activities: ['צ\'ק-אאוט מ-Landhaus Veronika (07:00-10:00)', 'החזרת רכב Alamo באינסברוק (12:00)', 'רכבת לנובארה', 'איסוף רכב והגעה לאגם אורטה'],
+                accommodation: 'מעבר מ-Landhaus Veronika לאגם אורטה'
             },
             // Lake Orta - 5 nights (25-30.8)
             '2025-08-26': {
@@ -3700,18 +3700,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             initMap();
             initSearch();
-            
-            // Clear old localStorage data to ensure fresh start with updated Mayrhofen data
-            if (localStorage.getItem('tripData')) {
-                const savedData = JSON.parse(localStorage.getItem('tripData'));
-                // Check if saved data contains old Alpbach references
-                const dataString = JSON.stringify(savedData);
-                if (dataString.includes('Alpbach') || dataString.includes('Galtenberg') || dataString.includes('אלפבאך')) {
-                    console.log('Clearing old localStorage data with Alpbach references');
-                    localStorage.removeItem('tripData');
-                }
-            }
-            
             loadSavedData();
             initAutoSave();
             loadTripData();
