@@ -1,6 +1,6 @@
-# 🏔️ Austria & Lake Orta Travel Site
+# 🏔️ Austria & Lago di Garda Travel Site
 
-A comprehensive travel planning website for a family trip to Austria and Lake Orta, Italy (August 17-31, 2025).
+A comprehensive travel planning website for a family trip to Austria and Lago di Garda, Italy (August 17-31, 2025).
 
 ## 🌟 Features
 
@@ -8,7 +8,7 @@ A comprehensive travel planning website for a family trip to Austria and Lake Or
 - **Car Rental Information**: Detailed Alamo car rental information with direct PDF links
 - **Interactive Calendar**: Visual calendar showing the complete trip itinerary
 - **Interactive Map**: Route visualization using Leaflet.js
-- **Destination Guides**: Detailed information about Alpbach (Tyrol) and Lake Orta
+- **Destination Guides**: Detailed information about Mayrhofen (Tyrol) and Lago di Garda
 - **Edit Mode**: Built-in content management system for easy updates
 - **Mobile Responsive**: Optimized for all devices
 
@@ -17,8 +17,8 @@ A comprehensive travel planning website for a family trip to Austria and Lake Or
 - **Dates**: August 17-31, 2025
 - **Duration**: 14 days
 - **Destinations**: 
-  - Alpbach, Tyrol, Austria (7 nights)
-  - Lake Orta, Italy (5 nights)
+  - Mayrhofen, Tyrol, Austria (7 nights)
+  - Lago di Garda, Italy (5 nights)
 - **Family**: Couple + 1.5-year-old toddler
 
 ## 🛫 Flight Information
@@ -31,12 +31,12 @@ A comprehensive travel planning website for a family trip to Austria and Lake Or
 
 - **Car Rental**: Alamo - Toyota C-HR (Innsbruck Airport)
 - **Train**: Innsbruck → Novara (for Italy segment)
-- **Car Rental Italy**: Novara → Lake Orta → Malpensa
+- **Car Rental Italy**: Verona → Lago di Garda → Malpensa
 
 ## 🏨 Accommodations
 
-- **Austria**: Kinderhotel Galtenberg or Hotel Alphof - Alpbach
-- **Italy**: Agriturismo La Darina or Hotel La Bussola - Lake Orta
+- **Austria**: Resort Schrofenblick + Apparthotel Landhaus Veronika - Mayrhofen
+- **Italy**: Agriturismo Ca' del Sol - Lago di Garda
 
 ## 🔧 Technical Features
 
