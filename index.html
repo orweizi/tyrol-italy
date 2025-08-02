@@ -1993,6 +1993,74 @@
                         </div>
                     </div>
 
+                    <!-- Hotel Booking: Landhaus Veronika -->
+                    <div class="flight-card editable-item" data-item-type="accommodation" data-item-id="hotel3">
+                        <div class="edit-controls">
+                            <button class="edit-btn edit" onclick="editItem('accommodation', 'hotel3')" title="ערוך">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <h3><i class="fas fa-hotel"></i> Apparthotel "Landhaus Veronika" - Mayrhofen</h3>
+                        <div class="flight-info">
+                            <div class="flight-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>כתובת</div>
+                                <strong class="hotel-address">Dursterstraße 250b, 6290 Mayrhofen, Austria</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-check"></i>
+                                <div>צ'ק-אין</div>
+                                <strong class="checkin-date">יום חמישי, 21 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-times"></i>
+                                <div>צ'ק-אאוט</div>
+                                <strong class="checkout-date">יום שני, 25 באוגוסט 2025</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-clock"></i>
+                                <div>שעות צ'ק-אין</div>
+                                <strong>15:00 - 21:00</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-clock"></i>
+                                <div>שעות צ'ק-אאוט</div>
+                                <strong>07:00 - 10:00</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>מספר לילות</div>
+                                <strong>4 לילות</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-users"></i>
+                                <div>אורחים</div>
+                                <strong>2 מבוגרים + 1 ילד (גיל שנה), 1 דירה</strong>
+                            </div>
+                            <div class="flight-detail">
+                                <i class="fas fa-file-alt"></i>
+                                <div>מסמך</div>
+                                <strong><a href="docs/landhaus-veronika-tirol.pdf" target="_blank" class="doc-link">אישור הזמנה PDF</a></strong>
+                            </div>
+                        </div>
+                        <!-- Mobile summary (hidden on desktop) -->
+                        <div class="mobile-summary">
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">🏨</span>
+                                <span class="mobile-summary-value">Landhaus Veronika • Mayrhofen</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">📅</span>
+                                <span class="mobile-summary-value">21-25 אוגוסט • 4 לילות</span>
+                            </div>
+                            <div class="mobile-summary-row">
+                                <span class="mobile-summary-label">👥</span>
+                                <span class="mobile-summary-value">2 מבוגרים + 1 ילד • 1 דירה</span>
+                            </div>
+                            <div class="mobile-tap-hint">👆 לחץ לפרטים מלאים</div>
+                        </div>
+                    </div>
+
                     <!-- Hotel Booking: Milan -->
                     <div class="flight-card editable-item" data-item-type="accommodation" data-item-id="hotel2">
                         <div class="edit-controls">
@@ -2265,11 +2333,11 @@
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #2c5282;"></div>
-                                <span>אינסברוק ← Alpbach (נסיעה)</span>
+                                <span>אינסברוק ← Mayrhofen (נסיעה)</span>
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #3182ce;"></div>
-                                <span>Alpbach ← אגם אורטה</span>
+                                <span>Mayrhofen ← אגם אורטה</span>
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #e53e3e;"></div>
@@ -2289,11 +2357,11 @@
 
         <!-- Destinations -->
         <section class="destinations">
-            <!-- Destination 1: Alpbach Tyrol -->
-            <div class="destination-card" data-destination="alpbach">
+            <!-- Destination 1: Mayrhofen Tyrol -->
+            <div class="destination-card" data-destination="mayrhofen">
                 <div class="destination-header" onclick="toggleDestination('dest1')">
                     <i class="fas fa-chevron-down toggle-icon" id="icon1"></i>
-                    <h2>🏔️ Alpbach - טירול</h2>
+                    <h2>🏔️ Mayrhofen - טירול</h2>
                     <p class="destination-date">18-25 באוגוסט • 7 לילות</p>
                 </div>
                 <div class="destination-content" id="dest1">
@@ -2317,7 +2385,7 @@
                         <div class="info-section">
                             <h3><i class="fas fa-bed"></i> לינה</h3>
                             <div class="editable-field" contenteditable="true" data-placeholder="הזן קישור למקום הלינה או פרטים">
-                                7 לילות ב-Kinderhotel Galtenberg 4*S או Hotel Alphof - Alpbach
+                                3 לילות ב-Resort Schrofenblick + 4 לילות ב-Apparthotel Landhaus Veronika - Mayrhofen
                             </div>
                         </div>
 
@@ -2733,12 +2801,12 @@
                             </label>
                         </div>
                         
-                        <div class="checklist-item">
-                            <input type="checkbox" id="accommodation-alpbach" class="checklist-checkbox">
-                            <label for="accommodation-alpbach">
+                        <div class="checklist-item completed">
+                            <input type="checkbox" id="accommodation-mayrhofen" class="checklist-checkbox" checked>
+                            <label for="accommodation-mayrhofen">
                                 <div class="checklist-label">
-                                    <strong>אלפבך/טירול - 21-25 באוגוסט</strong>
-                                    <div class="checklist-detail">4 לילות באזור האלפים</div>
+                                    <strong>מירהופן/טירול - 21-25 באוגוסט</strong>
+                                    <div class="checklist-detail">4 לילות ב-Landhaus Veronika • ✅ הוזמן</div>
                                 </div>
                             </label>
                         </div>
@@ -2784,7 +2852,7 @@
                             <label for="transport-car-austria">
                                 <div class="checklist-label">
                                     <strong>השכרת רכב - אוסטריה</strong>
-                                    <div class="checklist-detail">אינסברוק 18-25 באוגוסט • ✅ הוזמן</div>
+                                    <div class="checklist-detail">מירהופן 18-25 באוגוסט • ✅ הוזמן</div>
                                 </div>
                             </label>
                         </div>
@@ -2910,7 +2978,7 @@
                 color: "#3182ce"
             },
             {
-                name: "Alpbach - טירול", 
+                name: "Mayrhofen - טירול", 
                 coords: [47.3944, 11.9444],
                 icon: "🏔️",
                 color: "#2c5282"
@@ -2972,15 +3040,15 @@
                      [48.2082, 16.3738], // Vienna
                      [47.2692, 11.4041]  // Innsbruck
                  ],
-                 // Innsbruck to Alpbach - via A12 and local roads
-                 [
-                     [47.2692, 11.4041], // Innsbruck
-                     [47.3, 11.6],       // via Wörgl
-                     [47.3944, 11.9444]  // Alpbach
-                 ],
-                 // Alpbach to Pettenasco - via train/car combination
-                 [
-                     [47.3944, 11.9444], // Alpbach
+                                 // Innsbruck to Mayrhofen - via A12 and local roads
+                [
+                    [47.2692, 11.4041], // Innsbruck
+                    [47.2, 11.7],       // via Zillertal
+                    [47.1654, 11.8689]  // Mayrhofen
+                ],
+                // Mayrhofen to Pettenasco - via train/car combination
+                [
+                    [47.1654, 11.8689], // Mayrhofen
                      [47.2627, 11.3945], // via Innsbruck
                      [46.5, 11.0],       // via Brenner Pass
                      [45.9, 10.0],       // via Verona area
@@ -3488,26 +3556,26 @@
             '2025-08-21': {
                 type: 'trip',
                 location: 'Mayrhofen',
-                activities: ['צ\'ק-אאוט מהמלון', 'נסיעה ליעד הבא'],
-                accommodation: 'Resort Schrofenblick - Mayrhofen (עד הבוקר)'
+                activities: ['צ\'ק-אאוט מ-Resort Schrofenblick', 'צ\'ק-אין ל-Apparthotel Landhaus Veronika', 'התמקמות בדירה החדשה'],
+                accommodation: 'Apparthotel Landhaus Veronika - Mayrhofen'
             },
             '2025-08-22': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['Rattenberg & Kisslinger Glass', 'יום נופש'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['חקר Mayrhofen מהדירה החדשה', 'רכבל Penkenbahn', 'יום נופש'],
+                accommodation: 'Apparthotel Landhaus Veronika - Mayrhofen'
             },
             '2025-08-23': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['יום חופשי', 'חקירת האזור'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['Zillertal Valley', 'פעילויות מקומיות', 'נופים אלפיניים'],
+                accommodation: 'Apparthotel Landhaus Veronika - Mayrhofen'
             },
             '2025-08-24': {
                 type: 'trip',
-                location: 'Alpbach',
-                activities: ['פעילויות אחרונות באזור', 'הכנות לנסיעה'],
-                accommodation: 'Alpbach - Kinderhotel Galtenberg'
+                location: 'Mayrhofen',
+                activities: ['יום משפחתי בדירה', 'הכנות לנסיעה לאיטליה'],
+                accommodation: 'Apparthotel Landhaus Veronika - Mayrhofen'
             },
             '2025-08-25': {
                 type: 'travel',
