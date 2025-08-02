@@ -3700,6 +3700,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             initMap();
             initSearch();
+            
+            // Clear old localStorage data to ensure fresh start with updated Mayrhofen data
+            if (localStorage.getItem('tripData')) {
+                const savedData = JSON.parse(localStorage.getItem('tripData'));
+                // Check if saved data contains old Alpbach references
+                const dataString = JSON.stringify(savedData);
+                if (dataString.includes('Alpbach') || dataString.includes('Galtenberg') || dataString.includes('אלפבאך')) {
+                    console.log('Clearing old localStorage data with Alpbach references');
+                    localStorage.removeItem('tripData');
+                }
+            }
+            
             loadSavedData();
             initAutoSave();
             loadTripData();
