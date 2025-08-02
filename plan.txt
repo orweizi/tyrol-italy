@@ -18,13 +18,13 @@
 
 ## 2. לוח זמנים כללי
 
-| תאריך   | יעד לינה                                      | פירוט                                                                 |
-| ------- | --------------------------------------------- | --------------------------------------------------------------------- |
-| 17.8    | Vienna, Gal and Keren's place                 | לילה ליד השדה                                                         |
-| 18-21.8 | **Mayhorden, Tyrol**                          | לינה במייהורפן עם גל וקרן                                             |
-| 18–25.8 | **Mayrhofen, Tyrol**                          | מעבר לשני מלונות משפחתיים (19–21 Neuhaus Resort, 21–25 Hotel Berghof) |
-| 25–30.8 | **Pettenasco / Orta San Giulio**, Lago d’Orta | Agriturismo La Darina                                                 |
-| 30.8    | Sheraton / MOXY MXP                           | לילה לפני טיסת לילה                                                   |
+| תאריך   | יעד לינה                                        | פירוט                                                                 |
+| ------- | ----------------------------------------------- | --------------------------------------------------------------------- |
+| 17.8    | NH Vienna Airport / MOXY                        | לילה ליד השדה                                                         |
+| 18.8    | בית חברים – Zillertal                           | 1 לילה אירוח פרטי                                                     |
+| 19–25.8 | **Mayrhofen, Tyrol**                            | מעבר לשני מלונות משפחתיים (19–21 Neuhaus Resort, 21–25 Hotel Berghof) |
+| 25–30.8 | **Peschiera del Garda / Lazise**, Lago di Garda | Agriturismo Ca' del Sol                                               |
+| 30.8    | Sheraton / MOXY MXP                             | לילה לפני טיסת לילה                                                   |
 
 ---
 
@@ -32,7 +32,9 @@
 
 ### 3.1 רכב – טירול
 
-לפי המסמך
+* איסוף: 18.8 אינסברוק ‎08:30
+* החזרה: 25.8 אינסברוק ‎08:00
+* כיסא ISOFIX + וינייטה כלולה.
 
 ### 3.2 רכבות – אינסברוק ► איטליה (25.8)
 
@@ -71,25 +73,27 @@
 
 ---
 
-## 6. אטרקציות – Lago d’Orta (25‑30/8)
+## 6. אטרקציות – Lago di Garda (25–30/8)
 
-| אתר                    | קישור                                                                      | מה יש שם?                   |
-| ---------------------- | -------------------------------------------------------------------------- | --------------------------- |
-| Isola San Giulio Ferry | [https://www.navigazionelagodorta.it](https://www.navigazionelagodorta.it) | הפלגה קצרה, שביל עגלות מוצל |
-| Spiaggia Miami         | [https://goo.gl/maps/fL8N2G9Ww2H2](https://goo.gl/maps/fL8N2G9Ww2H2)       | מים רדודים, משחק חול        |
-| Parco Gianni Rodari    | [https://www.parcofantasia.it](https://www.parcofantasia.it)               | סדנאות יצירה לגיל הרך       |
-| Murta Park Omegna      | [https://goo.gl/maps/3pF8KsdXYZ](https://goo.gl/maps/3pF8KsdXYZ)           | גן משחקים מוצל ליד הטיילת   |
+| אתר                               | קישור                                                                          | מה יש שם?                                             | מרחק/גישה \*       |
+| --------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------- | ------------------ |
+| Parco Giardino Sigurtà            | [https://www.sigurta.it/en](https://www.sigurta.it/en)                         | גנים עצומים עם רכבת מיניאטורית, ברווזים, מדשאות לריצה | 10 דק' מ-Peschiera |
+| Parco Natura Viva                 | [https://www.parconaturaviva.it/en](https://www.parconaturaviva.it/en)         | ספארי ברכב + גן חיות מוצל ידידותי לעגלות              | 15 דק'             |
+| Giardini Trauttmansdorff (Merano) | [https://www.trauttmansdorff.it/en](https://www.trauttmansdorff.it/en)         | >80 גינות נושא, פינת ליטוף – **טיול יום (2 ש')**      | 2 ש' נסיעה         |
+| Navigazione Lago di Garda         | [https://www.navigazionelaghi.it/](https://www.navigazionelaghi.it/)           | הפלגות מעבורת קצרות לערי האגם (Sirmione, Bardolino)   | רציף מרכזי         |
+| Gardaland SEA LIFE Aquarium       | [https://www.gardaland.it/sea-life/](https://www.gardaland.it/sea-life/)       | אקווריום מקורה, מנהרות זכוכית, עגלות מותאמות          | 5 דק'              |
+| Spiaggia Lido Campanello          | [https://goo.gl/maps/4qcw1p4zYwQXaYAK8](https://goo.gl/maps/4qcw1p4zYwQXaYAK8) | חוף חצצי רדוד, מגרש משחקים מוצל                       | 8 דק'              |
+| Parco La Quiete                   | [https://www.parcolaquiete.it/en](https://www.parcolaquiete.it/en)             | בריכות רדודות, מתקני מים לגיל הרך, דשא רחב            | 25 דק'             |
 
----
+> \*מרחקים ממוצעים מלזיזה / פסקיירה.
 
-## 7. מזג אוויר וצ׳ק‑ליסט
+### מסעדות שחייבים לנסות סביב האגם
 
-* Mayrhofen: 23‑26 °C, ערב קריר → להביא סווטשרט.
-* Orta: 28‑31 °C, לחות נמוכה → קרם הגנה, כובע.
-* עגלת שטח מתקפלת, מנשא גב קצר לטיולי שביל.
+| שם                                   | קישור                                                                | למה?                                          |
+| ------------------------------------ | -------------------------------------------------------------------- | --------------------------------------------- |
+| **Osteria al Torcol** (Sirmione)     | [https://www.al-torcol.it](https://www.al-torcol.it)                 | פסטות עבודת‑יד, כיסאות תינוק, רחבה קטנה לשחק  |
+| **Locanda alla Fata** (Valeggio)     | [https://www.locandaallafata.it](https://www.locandaallafata.it)     | טורטליני "Nodo d'Amore" אותנטי, מרפסת מוצלת   |
+| **La Bottega di Sguà** (Bardolino)   | [https://www.labottegadisgua.it](https://www.labottegadisgua.it)     | גבינות מקומיות, כריכים גורמה, משחקי עץ לילדים |
+| **Agriturismo Ca' del Sol** (Lazise) | [https://www.agriturismocadel.net](https://www.agriturismocadel.net) | ארוחת חווה‑לשולחן, חיות משק בחצר              |
+| **Gelateria La Romana** (Peschiera)  | [https://www.gelateriaromana.com](https://www.gelateriaromana.com)   | גלידת וניל אגדי עם פונדו שוקולד חם            |
 
----
-
-### שאלות או תיקונים?
-
-תגידו ואעדכן מייד 🙂
