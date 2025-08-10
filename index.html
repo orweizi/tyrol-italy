@@ -3586,7 +3586,11 @@
         let tripData = {};
 
         // Trip Schedule Data
-        const tripSchedule = {
+        let tripSchedule = {};
+        let itineraryData = {};
+
+        // Original schedule data (kept as backup)
+        const originalTripSchedule = {
             // Flight dates
             '2025-08-17': {
                 type: 'flight',
@@ -3732,16 +3736,67 @@
             localStorage.setItem('travelChecklist', JSON.stringify(checklistState));
         }
 
+        // Debug function to clear localStorage if needed
+        function clearScheduleCache() {
+            localStorage.removeItem('tripDataFull');
+            localStorage.removeItem('tripData');
+            console.log('Schedule cache cleared. Reload the page to use fresh JSON data.');
+        }
+        
+        // Debug function to reload JSON data
+        async function reloadFromJSON() {
+            console.log('Clearing cache and reloading from JSON...');
+            clearScheduleCache();
+            await loadItineraryFromJSON();
+            updateCalendar();
+            console.log('Reloaded! Check the calendar.');
+        }
+        
+        // Debug function to check current state
+        function checkDataState() {
+            console.log('=== Current Data State ===');
+            console.log('JSON loaded:', !!itineraryData.daily_schedule);
+            console.log('JSON entries:', itineraryData.daily_schedule ? Object.keys(itineraryData.daily_schedule).length : 0);
+            console.log('Current tripSchedule entries:', Object.keys(tripSchedule).length);
+            console.log('localStorage tripData exists:', !!localStorage.getItem('tripDataFull'));
+            
+            // Check a sample date
+            const sampleDate = '2025-08-19';
+            console.log(`Sample date (${sampleDate}):`);
+            console.log('- JSON data:', itineraryData.daily_schedule ? itineraryData.daily_schedule[sampleDate] : 'None');
+            console.log('- Current data:', tripSchedule[sampleDate]);
+            
+            // Check user edits
+            const userEdits = getUserEditedCalendarData();
+            console.log('User edits count:', Object.keys(userEdits).length);
+            console.log('User edited dates:', Object.keys(userEdits));
+            console.log('=========================');
+        }
+
+        // Make functions available globally for debugging
+        window.clearScheduleCache = clearScheduleCache;
+        window.reloadFromJSON = reloadFromJSON;
+        window.checkDataState = checkDataState;
+
         // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Load itinerary from JSON first
+            const jsonLoaded = await loadItineraryFromJSON();
+            
             initMap();
             initSearch();
             loadSavedData();
             initAutoSave();
+            
+            // Only load localStorage trip data if JSON didn't load
+            if (jsonLoaded) {
+                console.log('Using JSON data, localStorage will only be used for user edits');
+            }
             loadTripData();
+            
             initCalendar();
-                             initCollapsedSections();
-                 initMobileCardHandlers();
+            initCollapsedSections();
+            initMobileCardHandlers();
             initChecklist();
             
             // Add keyboard shortcuts
@@ -3936,6 +3991,30 @@
                 activitiesHtml = '<li style="color: var(--gray-600); font-style: italic;">אין פעילויות מתוכננות</li>';
             }
 
+            // Add suggested attractions if available
+            let suggestionsHtml = '';
+            if (dayData.suggested_attractions && dayData.suggested_attractions.length > 0) {
+                suggestionsHtml = `
+                    <div style="margin-top: 15px; padding: 10px; background: var(--blue-50); border-radius: 8px; border-left: 3px solid var(--blue-500);">
+                        <h4 style="margin: 0 0 8px 0; color: var(--blue-700); font-size: 14px;">אטרקציות מומלצות:</h4>
+                        <ul style="margin: 0; padding-right: 15px;">
+                            ${dayData.suggested_attractions.map(attraction => `<li style="margin: 3px 0;">${attraction}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add notes if available
+            let notesHtml = '';
+            if (dayData.notes) {
+                notesHtml = `
+                    <div style="margin-top: 15px; padding: 10px; background: var(--yellow-50); border-radius: 8px; border-left: 3px solid var(--yellow-500);">
+                        <h4 style="margin: 0 0 8px 0; color: var(--yellow-700); font-size: 14px;">הערות:</h4>
+                        <p style="margin: 0; color: var(--yellow-800);">${dayData.notes}</p>
+                    </div>
+                `;
+            }
+
             modalContent.innerHTML = `
                 <h3 style="color: var(--primary-color); margin-bottom: 20px;">
                     📅 ${dateFormatted}
@@ -3953,6 +4032,9 @@
                         ${activitiesHtml}
                     </ul>
                 </div>
+                
+                ${suggestionsHtml}
+                ${notesHtml}
                 
                 <div class="edit-modal-buttons">
                     <button class="edit-modal-btn cancel" onclick="closeEditModal()" style="width: 100%;">סגור</button>
@@ -4562,6 +4644,32 @@
             setTimeout(() => editItem(type, newId), 100);
         }
 
+        // Load itinerary from JSON file
+        async function loadItineraryFromJSON() {
+            try {
+                const response = await fetch('itinerary.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                itineraryData = await response.json();
+                
+                // Convert daily_schedule to tripSchedule format
+                if (itineraryData.daily_schedule) {
+                    tripSchedule = { ...itineraryData.daily_schedule };
+                }
+                
+                console.log('Itinerary loaded successfully from JSON');
+                console.log('Loaded schedule entries:', Object.keys(tripSchedule).length);
+                console.log('Sample entry (2025-08-19):', tripSchedule['2025-08-19']);
+                return true;
+            } catch (error) {
+                console.warn('Could not load itinerary.json, using original data:', error);
+                // Fallback to original hardcoded data
+                tripSchedule = originalTripSchedule;
+                return false;
+            }
+        }
+
         // Enhanced Save/Load Functions
         function loadTripData() {
             const savedData = localStorage.getItem('tripDataFull');
@@ -4584,10 +4692,21 @@
                 }
             });
 
-            // Apply calendar data
+            // Apply calendar data - only if no JSON data was loaded, or merge user edits with JSON data
             if (tripData.calendarData) {
+                console.log('Applying localStorage calendar data, entries:', Object.keys(tripData.calendarData).length);
                 Object.keys(tripData.calendarData).forEach(dateStr => {
-                    tripSchedule[dateStr] = tripData.calendarData[dateStr];
+                    // If we have JSON data, merge user edits with JSON base data
+                    if (itineraryData.daily_schedule && itineraryData.daily_schedule[dateStr]) {
+                        // Merge localStorage edits with JSON data
+                        tripSchedule[dateStr] = {
+                            ...itineraryData.daily_schedule[dateStr], // JSON base
+                            ...tripData.calendarData[dateStr] // User edits override
+                        };
+                    } else {
+                        // No JSON data for this date, use localStorage
+                        tripSchedule[dateStr] = tripData.calendarData[dateStr];
+                    }
                 });
                 // Update calendar display
                 updateCalendar();
@@ -4651,6 +4770,34 @@
             });
         }
 
+        // Function to get only user-edited calendar data (not JSON base data)
+        function getUserEditedCalendarData() {
+            const userEdits = {};
+            
+            // Only save dates that were actually edited by the user
+            // We track this by checking if the data differs from JSON base data
+            Object.keys(tripSchedule).forEach(dateStr => {
+                const currentData = tripSchedule[dateStr];
+                const jsonBaseData = itineraryData.daily_schedule ? itineraryData.daily_schedule[dateStr] : null;
+                
+                // If we have JSON base data, check if current data differs
+                if (jsonBaseData) {
+                    // Compare the data - if different, it means user edited it
+                    if (JSON.stringify(currentData) !== JSON.stringify(jsonBaseData)) {
+                        userEdits[dateStr] = currentData;
+                        console.log(`Saving user edit for ${dateStr}`);
+                    }
+                } else {
+                    // No JSON data for this date - it's a user addition
+                    userEdits[dateStr] = currentData;
+                    console.log(`Saving user addition for ${dateStr}`);
+                }
+            });
+            
+            console.log(`Saving ${Object.keys(userEdits).length} user calendar edits`);
+            return userEdits;
+        }
+
         // Enhanced save function
         function saveAllData() {
             const data = { editableFields: [] };
@@ -4712,8 +4859,8 @@
                 }
             });
             
-                         // Save calendar data
-             data.calendarData = tripSchedule;
+                         // Save only user edits to calendar data (not the full JSON data)
+             data.calendarData = getUserEditedCalendarData();
              
              tripData = data;
              localStorage.setItem('tripDataFull', JSON.stringify(data));

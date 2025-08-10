@@ -1,0 +1,437 @@
+{
+  "trip_info": {
+    "title": "תכנית טיול משפחתית – טירול (Zillertal) ואגם גארדה (איטליה)",
+    "dates": "17–31 באוגוסט 2025",
+    "travelers": "זוג + פעוט בן 1.5",
+    "principle": "מינימום נסיעות ארוכות"
+  },
+  "flights": {
+    "outbound": [
+      {
+        "date": "2025-08-17",
+        "route": "תל‑אביב ► וינה",
+        "flight": "OS860",
+        "departure": "17:15",
+        "arrival": "20:15",
+        "notes": "טיסה ישירה של Austrian; עריסה בהזמנה מראש"
+      },
+      {
+        "date": "2025-08-18",
+        "route": "וינה ► אינסברוק",
+        "flight": "OS912",
+        "departure": "06:50",
+        "arrival": "07:50",
+        "notes": "מאפשרת להשיג רכב ולהיות במאיירהופן עד 10:00"
+      }
+    ],
+    "return": [
+      {
+        "date": "2025-08-31",
+        "route": "מילאנו‑מלפנסה ► תל‑אביב",
+        "flight": "LY382",
+        "departure": "00:30",
+        "arrival": "05:10",
+        "notes": "מונית ל‑MXP בערב 30.8"
+      }
+    ]
+  },
+  "transportation": {
+    "car_tyrol": {
+      "pickup": {
+        "date": "2025-08-18",
+        "location": "אינסברוק",
+        "time": "08:30"
+      },
+      "return": {
+        "date": "2025-08-25",
+        "location": "אינסברוק",
+        "time": "08:00"
+      },
+      "includes": "כיסא ISOFIX + וינייטה כלולה"
+    },
+    "train_to_italy": {
+      "date": "2025-08-25",
+      "segments": [
+        {
+          "route": "אינסברוק־ורונה",
+          "train": "RJX 185",
+          "departure": "08:24",
+          "arrival": "12:06"
+        },
+        {
+          "route": "ורונה־Peschiera del Garda",
+          "train": "Regionale",
+          "departure": "12:30",
+          "arrival": "14:30"
+        }
+      ]
+    },
+    "car_italy": {
+      "pickup": {
+        "date": "2025-08-25",
+        "location": "Novara",
+        "time": "15:30"
+      },
+      "return": {
+        "date": "2025-08-30",
+        "location": "Malpensa T1",
+        "time": "18:00"
+      }
+    }
+  },
+  "accommodations": [
+    {
+      "dates": "2025-08-17",
+      "location": "NH Vienna Airport / MOXY",
+      "description": "לילה ליד השדה",
+      "nights": 1
+    },
+    {
+      "dates": "2025-08-18",
+      "location": "בית חברים – Zillertal",
+      "description": "1 לילה אירוח פרטי",
+      "nights": 1
+    },
+    {
+      "dates": "2025-08-19 to 2025-08-21",
+      "location": "Neuhaus Resort, Mayrhofen, Tyrol",
+      "description": "מלון משפחתי",
+      "nights": 2
+    },
+    {
+      "dates": "2025-08-21 to 2025-08-25",
+      "location": "Hotel Berghof, Mayrhofen, Tyrol",
+      "description": "מלון משפחתי",
+      "nights": 4
+    },
+    {
+      "dates": "2025-08-25 to 2025-08-28",
+      "location": "Agriturismo Ca' del Sol, Peschiera del Garda / Lazise",
+      "description": "אגריטוריסמו באגם גארדה",
+      "nights": 3
+    },
+    {
+      "dates": "2025-08-28 to 2025-08-31",
+      "location": "Sheraton / MOXY MXP",
+      "description": "ביקור קצר במילאנו",
+      "nights": 3
+    }
+  ],
+  "attractions": {
+    "mayrhofen_zillertal": [
+      {
+        "name": "Freizeit Arena",
+        "url": "https://www.freizeit.at",
+        "suitable_for_toddler": "בריכת 32 °C, מגלשה קטנה, חדר משחק",
+        "distance": "במרכז מאיירהופן"
+      },
+      {
+        "name": "Ahornbahn & Ahornsee",
+        "url": "https://ahornbahn.at",
+        "suitable_for_toddler": "רכבל מהיר, אגם רדוד, דק עץ לעגלות",
+        "distance": "5 דק׳ הליכה לרכבל"
+      },
+      {
+        "name": "Erlebnissennerei Zillertal",
+        "url": "https://www.sennerei-zillertal.at/en",
+        "suitable_for_toddler": "חוות ליטוף + טעימות יוגורט",
+        "distance": "3 ק״מ / 5 דק׳"
+      },
+      {
+        "name": "Spruce Tree Castle (Fichtenschloss)",
+        "url": "https://www.zillertaler-bergbahnen.com",
+        "suitable_for_toddler": "מגלשות, ארמון עץ, אזור מים",
+        "distance": "15 דק׳ למעלה Rosenalm"
+      },
+      {
+        "name": "Murmelland Zillertal",
+        "url": "https://www.murmelland-zillertal.at",
+        "suitable_for_toddler": "מרמוטות, עיזים, גן‑שעשועים",
+        "distance": "20 דק׳ נסיעה + רכבל קצר"
+      },
+      {
+        "name": "Erlebnistherme Fügen",
+        "url": "https://www.erlebnistherme-zillertal.at",
+        "suitable_for_toddler": "בריכת גלים רדודה, אזור תינוקות",
+        "distance": "20 דק׳ צפונה"
+      },
+      {
+        "name": "Zillertalbahn Steam Train",
+        "url": "https://www.zillertalbahn.at/en",
+        "suitable_for_toddler": "רכבת קיטור נוסטלגית Mayrhofen‑Jenbach",
+        "distance": "תחנה במרכז"
+      },
+      {
+        "name": "Spieljoch Adventure Park",
+        "url": "https://www.spieljochbahn.at/en",
+        "suitable_for_toddler": "מסלול מים, חיפוש אבני‑חושן, שביל עגלות",
+        "distance": "25 דק׳ ל‑Fügen"
+      }
+    ],
+    "lago_di_garda": [
+      {
+        "name": "Parco Giardino Sigurtà",
+        "url": "https://www.sigurta.it/en",
+        "description": "גנים עצומים עם רכבת מיניאטורית, ברווזים, מדשאות לריצה",
+        "distance": "10 דק' מ-Peschiera"
+      },
+      {
+        "name": "Parco Natura Viva",
+        "url": "https://www.parconaturaviva.it/en",
+        "description": "ספארי ברכב + גן חיות מוצל ידידותי לעגלות",
+        "distance": "15 דק'"
+      },
+      {
+        "name": "Giardini Trauttmansdorff (Merano)",
+        "url": "https://www.trauttmansdorff.it/en",
+        "description": ">80 גינות נושא, פינת ליטוף – **טיול יום (2 ש')**",
+        "distance": "2 ש' נסיעה"
+      },
+      {
+        "name": "Navigazione Lago di Garda",
+        "url": "https://www.navigazionelaghi.it/",
+        "description": "הפלגות מעבורת קצרות לערי האגם (Sirmione, Bardolino)",
+        "distance": "רציף מרכזי"
+      },
+      {
+        "name": "Gardaland SEA LIFE Aquarium",
+        "url": "https://www.gardaland.it/sea-life/",
+        "description": "אקווריום מקורה, מנהרות זכוכית, עגלות מותאמות",
+        "distance": "5 דק'"
+      },
+      {
+        "name": "Spiaggia Lido Campanello",
+        "url": "https://goo.gl/maps/4qcw1p4zYwQXaYAK8",
+        "description": "חוף חצצי רדוד, מגרש משחקים מוצל",
+        "distance": "8 דק'"
+      },
+      {
+        "name": "Parco La Quiete",
+        "url": "https://www.parcolaquiete.it/en",
+        "description": "בריכות רדודות, מתקני מים לגיל הרך, דשא רחב",
+        "distance": "25 דק'"
+      }
+    ]
+  },
+  "restaurants": {
+    "mayrhofen": [
+      {
+        "name": "Gasthof Perauer",
+        "url": "https://www.perauer.at",
+        "why": "תפריט טירולי, גינת משחק קטנה"
+      },
+      {
+        "name": "Restaurant La Vita",
+        "url": "https://www.lavita-mayrhofen.at",
+        "why": "פיצות ופסטות, כיסאות תינוק"
+      },
+      {
+        "name": "Gasser Delikatessen (Take‑Away)",
+        "url": "https://maps.app.goo.gl/RWy5j9zqvXoXoS7YA",
+        "why": "נקניקיות מקומיות, ספסלים בחוץ"
+      }
+    ],
+    "lago_di_garda": [
+      {
+        "name": "Osteria al Torcol (Sirmione)",
+        "url": "https://www.al-torcol.it",
+        "why": "פסטות עבודת‑יד, כיסאות תינוק, רחבה קטנה לשחק"
+      },
+      {
+        "name": "Locanda alla Fata (Valeggio)",
+        "url": "https://www.locandaallafata.it",
+        "why": "טורטליני \"Nodo d'Amore\" אותנטי, מרפסת מוצלת"
+      },
+      {
+        "name": "La Bottega di Sguà (Bardolino)",
+        "url": "https://www.labottegadisgua.it",
+        "why": "גבינות מקומיות, כריכים גורמה, משחקי עץ לילדים"
+      },
+      {
+        "name": "Agriturismo Ca' del Sol (Lazise)",
+        "url": "https://www.agriturismocadel.net",
+        "why": "ארוחת חווה‑לשולחן, חיות משק בחצר"
+      },
+      {
+        "name": "Gelateria La Romana (Peschiera)",
+        "url": "https://www.gelateriaromana.com",
+        "why": "גלידת וניל אגדי עם פונדו שוקולד חם"
+      }
+    ]
+  },
+  "daily_schedule": {
+    "2025-08-17": {
+      "type": "flight",
+      "location": "טיסה לאירופה",
+      "activities": [
+        "טיסה אלעל תל אביב → וינה (17:15)",
+        "נחיתה בוינה (20:15)",
+        "לינה בוינה"
+      ],
+      "accommodation": "NH Vienna Airport / MOXY",
+      "notes": "עריסה בהזמנה מראש"
+    },
+    "2025-08-18": {
+      "type": "travel",
+      "location": "נסיעה לטירול",
+      "activities": [
+        "טיסת חיבור וינה → אינסברוק (06:50-07:50)",
+        "איסוף רכב (08:30)",
+        "נסיעה לבית חברים ב-Zillertal",
+        "אירוח פרטי"
+      ],
+      "accommodation": "בית חברים – Zillertal",
+      "notes": "1 לילה אירוח פרטי"
+    },
+    "2025-08-19": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "צ'ק-אין ל-Neuhaus Resort",
+        "חקר Mayrhofen",
+        "רכבל Penkenbahn",
+        "הכרת האזור"
+      ],
+      "accommodation": "Neuhaus Resort - Mayrhofen",
+      "suggested_attractions": ["Freizeit Arena", "Ahornbahn & Ahornsee"]
+    },
+    "2025-08-20": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "Zillertal Valley",
+        "פעילויות מקומיות",
+        "נופי זילרטל"
+      ],
+      "accommodation": "Neuhaus Resort - Mayrhofen",
+      "suggested_attractions": ["Erlebnissennerei Zillertal", "Zillertalbahn Steam Train"]
+    },
+    "2025-08-21": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "צ'ק-אאוט מ-Neuhaus Resort",
+        "צ'ק-אין ל-Hotel Berghof",
+        "התמקמות במלון החדש",
+        "חקר האזור מהמקום החדש"
+      ],
+      "accommodation": "Hotel Berghof - Mayrhofen",
+      "notes": "מעבר בין מלונות"
+    },
+    "2025-08-22": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "חקר Mayrhofen מהמלון החדש",
+        "רכבל Penkenbahn",
+        "יום נופש"
+      ],
+      "accommodation": "Hotel Berghof - Mayrhofen",
+      "suggested_attractions": ["Spruce Tree Castle", "Murmelland Zillertal"]
+    },
+    "2025-08-23": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "Zillertal Valley",
+        "פעילויות מקומיות",
+        "נופי זילרטל"
+      ],
+      "accommodation": "Hotel Berghof - Mayrhofen",
+      "suggested_attractions": ["Erlebnistherme Fügen", "Spieljoch Adventure Park"]
+    },
+    "2025-08-24": {
+      "type": "trip",
+      "location": "Mayrhofen",
+      "activities": [
+        "יום משפחתי במלון",
+        "הכנות לנסיעה לאיטליה",
+        "ארוז וסידור"
+      ],
+      "accommodation": "Hotel Berghof - Mayrhofen",
+      "notes": "יום הכנות לנסיעה"
+    },
+    "2025-08-25": {
+      "type": "travel",
+      "location": "נסיעה לאיטליה",
+      "activities": [
+        "צ'ק-אאוט מ-Hotel Berghof (07:00-10:00)",
+        "החזרת רכב Alamo באינסברוק (08:00)",
+        "רכבת RJX 185 אינסברוק-ורונה (08:24-12:06)",
+        "רכבת ורונה-Peschiera del Garda (12:30-14:30)",
+        "איסוף רכב בNovara (15:30)",
+        "הגעה לאגם גארדה"
+      ],
+      "accommodation": "Agriturismo Ca' del Sol",
+      "notes": "יום מעבר מטירול לאיטליה"
+    },
+    "2025-08-26": {
+      "type": "trip",
+      "location": "אגם גארדה",
+      "activities": [
+        "Parco Giardino Sigurtà",
+        "רכבת מיניאטורית וגנים",
+        "היכרות עם האזור"
+      ],
+      "accommodation": "Agriturismo Ca' del Sol",
+      "suggested_attractions": ["Parco Giardino Sigurtà"]
+    },
+    "2025-08-27": {
+      "type": "trip",
+      "location": "אגם גארדה",
+      "activities": [
+        "Parco Natura Viva - ספארי ברכב",
+        "Spiaggia Lido Campanello",
+        "שחייה בחוף חצצי"
+      ],
+      "accommodation": "Agriturismo Ca' del Sol",
+      "suggested_attractions": ["Parco Natura Viva", "Spiaggia Lido Campanello"]
+    },
+    "2025-08-28": {
+      "type": "trip",
+      "location": "אגם גארדה / מילאנו",
+      "activities": [
+        "בוקר באגם גארדה",
+        "נסיעה למילאנו",
+        "צ'ק-אין למלון",
+        "חקר העיר"
+      ],
+      "accommodation": "מלון במילאנו",
+      "notes": "מעבר למילאנו"
+    },
+    "2025-08-29": {
+      "type": "trip",
+      "location": "אגם גארדה / מילאנו",
+      "activities": [
+        "פוגשים את נוני"
+      ],
+      "accommodation": "מלון במילאנו",
+      "notes": ""
+    },
+    "2025-08-30": {
+      "type": "trip",
+      "location": "מילאנו",
+      "activities": [
+        "Duomo di Milano",
+        "Galleria Vittorio Emanuele II",
+        "Navigli District",
+        "קניות והכנות לטיסה",
+        "מעבר למלון ליד המטוס"
+      ],
+      "accommodation": "Sheraton / MOXY MXP",
+      "notes": "יום אחרון - הכנות לטיסה"
+    },
+    "2025-08-31": {
+      "type": "flight",
+      "location": "טיסה חזרה",
+      "activities": [
+        "צ'ק-אאוט מהמלון",
+        "נסיעה למלפנסה",
+        "טיסה אלעל מלפנסה → תל אביב (00:30)",
+        "נחיתה בישראל (05:10)"
+      ],
+      "accommodation": "חזרה הביתה",
+      "notes": "סיום הטיול"
+    }
+  }
+}
