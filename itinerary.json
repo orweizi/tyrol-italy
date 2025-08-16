@@ -106,14 +106,14 @@
     },
     {
       "dates": "2025-08-25 to 2025-08-28",
-      "location": "Agriturismo Ca' del Sol, Peschiera del Garda / Lazise",
-      "description": "אגריטוריסמו באגם גארדה",
+      "location": "Corte Alma Spa and Luxury Home, Gargnano, Italy",
+      "description": "חדר זוגי עם נוף לאגם • B&B ליד האגם",
       "nights": 3
     },
     {
       "dates": "2025-08-28 to 2025-08-31",
-      "location": "Sheraton / MOXY MXP",
-      "description": "ביקור קצר במילאנו",
+      "location": "21 House of Stories Città Studi, Milan",
+      "description": "מלון עירוני עם ארוחת בוקר",
       "nights": 3
     }
   ],
@@ -362,7 +362,7 @@
         "איסוף רכב בNovara (15:30)",
         "הגעה לאגם גארדה"
       ],
-      "accommodation": "Agriturismo Ca' del Sol",
+      "accommodation": "Corte Alma Spa and Luxury Home",
       "notes": "יום מעבר מטירול לאיטליה"
     },
     "2025-08-26": {
@@ -373,7 +373,7 @@
         "רכבת מיניאטורית וגנים",
         "היכרות עם האזור"
       ],
-      "accommodation": "Agriturismo Ca' del Sol",
+      "accommodation": "Corte Alma Spa and Luxury Home",
       "suggested_attractions": ["Parco Giardino Sigurtà"]
     },
     "2025-08-27": {
@@ -384,7 +384,7 @@
         "Spiaggia Lido Campanello",
         "שחייה בחוף חצצי"
       ],
-      "accommodation": "Agriturismo Ca' del Sol",
+      "accommodation": "Corte Alma Spa and Luxury Home",
       "suggested_attractions": ["Parco Natura Viva", "Spiaggia Lido Campanello"]
     },
     "2025-08-28": {
@@ -396,7 +396,7 @@
         "צ'ק-אין למלון",
         "חקר העיר"
       ],
-      "accommodation": "מלון במילאנו",
+      "accommodation": "21 House of Stories Città Studi",
       "notes": "מעבר למילאנו"
     },
     "2025-08-29": {
@@ -405,7 +405,7 @@
       "activities": [
         "פוגשים את נוני"
       ],
-      "accommodation": "מלון במילאנו",
+      "accommodation": "21 House of Stories Città Studi",
       "notes": ""
     },
     "2025-08-30": {
@@ -418,7 +418,7 @@
         "קניות והכנות לטיסה",
         "מעבר למלון ליד המטוס"
       ],
-      "accommodation": "Sheraton / MOXY MXP",
+      "accommodation": "21 House of Stories Città Studi",
       "notes": "יום אחרון - הכנות לטיסה"
     },
     "2025-08-31": {
