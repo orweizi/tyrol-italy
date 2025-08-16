@@ -3651,6 +3651,7 @@
         // Trip Schedule Data
         let tripSchedule = {};
         let itineraryData = {};
+        let itineraryHash = null; // Used to validate localStorage overrides against the current itinerary
 
         // Original schedule data (kept as backup)
         const originalTripSchedule = {
@@ -4710,7 +4711,8 @@
         // Load itinerary from JSON file
         async function loadItineraryFromJSON() {
             try {
-                const response = await fetch('itinerary.json');
+                // Bust HTTP cache to ensure latest itinerary is loaded
+                const response = await fetch(`itinerary.json?ts=${Date.now()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -4719,6 +4721,17 @@
                 // Convert daily_schedule to tripSchedule format
                 if (itineraryData.daily_schedule) {
                     tripSchedule = { ...itineraryData.daily_schedule };
+                    // Compute a hash for the itinerary to validate caches
+                    try {
+                        const serialized = JSON.stringify(itineraryData.daily_schedule);
+                        let hash = 5381;
+                        for (let i = 0; i < serialized.length; i++) {
+                            hash = ((hash << 5) + hash) + serialized.charCodeAt(i);
+                        }
+                        itineraryHash = (hash >>> 0).toString(16);
+                    } catch (e) {
+                        itineraryHash = null;
+                    }
                 }
                 
                 console.log('Itinerary loaded successfully from JSON');
@@ -4756,22 +4769,24 @@
             });
 
             // Apply calendar data - only if no JSON data was loaded, or merge user edits with JSON data
-            if (tripData.calendarData) {
+            const savedHash = tripData.meta && tripData.meta.itineraryHash ? tripData.meta.itineraryHash : null;
+            const cacheMatches = !!itineraryHash && savedHash === itineraryHash;
+            if (tripData.calendarData && cacheMatches) {
                 console.log('Applying localStorage calendar data, entries:', Object.keys(tripData.calendarData).length);
                 Object.keys(tripData.calendarData).forEach(dateStr => {
-                    // If we have JSON data, merge user edits with JSON base data
                     if (itineraryData.daily_schedule && itineraryData.daily_schedule[dateStr]) {
-                        // Merge localStorage edits with JSON data
-                        tripSchedule[dateStr] = {
-                            ...itineraryData.daily_schedule[dateStr], // JSON base
-                            ...tripData.calendarData[dateStr] // User edits override
-                        };
+                        tripSchedule[dateStr] = { ...itineraryData.daily_schedule[dateStr], ...tripData.calendarData[dateStr] };
                     } else {
-                        // No JSON data for this date, use localStorage
                         tripSchedule[dateStr] = tripData.calendarData[dateStr];
                     }
                 });
-                // Update calendar display
+                updateCalendar();
+            } else if (tripData.calendarData && !cacheMatches) {
+                console.warn('Outdated local calendar cache detected; ignoring in favor of fresh itinerary.');
+                // Clear stale overrides and persist the fresh meta
+                tripData.calendarData = {};
+                tripData.meta = { ...(tripData.meta || {}), itineraryHash };
+                try { localStorage.setItem('tripDataFull', JSON.stringify(tripData)); } catch (_) {}
                 updateCalendar();
             }
             
@@ -4924,6 +4939,8 @@
             
                          // Save only user edits to calendar data (not the full JSON data)
              data.calendarData = getUserEditedCalendarData();
+             // Save current itinerary hash so future loads can validate cache freshness
+             data.meta = { itineraryHash };
              
              tripData = data;
              localStorage.setItem('tripDataFull', JSON.stringify(data));
